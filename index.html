@@ -1,1015 +1,2598 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-Portfolio Refleksi PPL - Ummul Karima</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-   <style>
-        /* Menggunakan font dari style COZYDIADORA */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
-        
-        :root {
-            --primary: #991b1b;
-            --primary-light: #fef2f2;
-            --accent: #1e293b;
-        }
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Menggunakan font dari style COZYDIADORA */
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap");
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
-            color: #334155;
-            scroll-behavior: smooth;
-        }
+      :root {
+        --primary: #991b1b;
+        --primary-light: #fef2f2;
+        --accent: #1e293b;
+      }
 
-        h1, h2, h3, .font-heading {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8fafc;
+        color: #334155;
+        scroll-behavior: smooth;
+      }
 
-        /* Nav Link Editorial Style (COZYDIADORA) */
-        .nav-link {
-            position: relative;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: #64748b;
-        }
+      h1,
+      h2,
+      h3,
+      .font-heading {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
 
-        .nav-link:hover {
-            color: var(--primary);
-        }
+      /* Nav Link Editorial Style (COZYDIADORA) */
+      .nav-link {
+        position: relative;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: #64748b;
+      }
 
-        .active-nav {
-            color: var(--primary) !important;
-        }
+      .nav-link:hover {
+        color: var(--primary);
+      }
 
-        .active-nav::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: -6px;
-            left: 0;
-            background-color: var(--primary);
-        }
+      .active-nav {
+        color: var(--primary) !important;
+      }
 
-        .tab-content {
-            display: none;
-            animation: slideUp 0.5s ease-out forwards;
-        }
+      .active-nav::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -6px;
+        left: 0;
+        background-color: var(--primary);
+      }
 
-        .tab-content.active {
-            display: block;
-        }
+      .tab-content {
+        display: none;
+        animation: slideUp 0.5s ease-out forwards;
+      }
 
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+      .tab-content.active {
+        display: block;
+      }
 
-        /* Button Styling (COZYDIADORA) */
-        .btn-solid {
-            background-color: var(--primary);
-            color: white;
-            border-radius: 9999px;
-            padding: 1rem 2rem;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 0.875rem;
-            border: 2px solid var(--primary);
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
         }
-        .btn-solid:hover {
-            background-color: #7f1d1d;
-            border-color: #7f1d1d;
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
+      }
 
-        .btn-outline {
-            background-color: transparent;
-            color: var(--primary);
-            border-radius: 9999px;
-            padding: 1rem 2rem;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 0.875rem;
-            border: 2px solid var(--primary);
-        }
-        .btn-outline:hover {
-            background-color: var(--primary-light);
-        }
+      /* Button Styling (COZYDIADORA) */
+      .btn-solid {
+        background-color: var(--primary);
+        color: white;
+        border-radius: 9999px;
+        padding: 1rem 2rem;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 0.875rem;
+        border: 2px solid var(--primary);
+      }
+      .btn-solid:hover {
+        background-color: #7f1d1d;
+        border-color: #7f1d1d;
+      }
 
-        /* Ticker Animation (COZYDIADORA) */
-        .ticker-wrap {
-            width: 100%;
-            overflow: hidden;
-            background-color: var(--primary);
-            color: white;
-            padding: 0.5rem 0;
-            white-space: nowrap;
-        }
-        .ticker {
-            display: inline-block;
-            animation: ticker 20s linear infinite;
-        }
-        @keyframes ticker {
-            0% { transform: translate3d(0, 0, 0); }
-            100% { transform: translate3d(-50%, 0, 0); }
-        }
+      .btn-outline {
+        background-color: transparent;
+        color: var(--primary);
+        border-radius: 9999px;
+        padding: 1rem 2rem;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 0.875rem;
+        border: 2px solid var(--primary);
+      }
+      .btn-outline:hover {
+        background-color: var(--primary-light);
+      }
 
-        /* Slideshow Animasi untuk Card Siklus (5 Gambar) dengan Crossfade Mulus */
-        @keyframes slideFade5 {
-            0%   { opacity: 0; }
-            5%   { opacity: 1; }
-            20%  { opacity: 1; }
-            25%  { opacity: 0; }
-            100% { opacity: 0; }
+      /* Ticker Animation (COZYDIADORA) */
+      .ticker-wrap {
+        width: 100%;
+        overflow: hidden;
+        background-color: var(--primary);
+        color: white;
+        padding: 0.5rem 0;
+        white-space: nowrap;
+      }
+      .ticker {
+        display: inline-block;
+        animation: ticker 20s linear infinite;
+      }
+      @keyframes ticker {
+        0% {
+          transform: translate3d(0, 0, 0);
         }
-        .animate-slide-1 { animation: slideFade5 20s infinite 0s; opacity: 0; }
-        .animate-slide-2 { animation: slideFade5 20s infinite 4s; opacity: 0; }
-        .animate-slide-3 { animation: slideFade5 20s infinite 8s; opacity: 0; }
-        .animate-slide-4 { animation: slideFade5 20s infinite 12s; opacity: 0; }
-        .animate-slide-5 { animation: slideFade5 20s infinite 16s; opacity: 0; }
+        100% {
+          transform: translate3d(-50%, 0, 0);
+        }
+      }
 
-        /* Slideshow Animasi untuk Card Siklus (10 Gambar khusus Siklus 2) dengan Crossfade Mulus */
-        @keyframes slideFade10 {
-            0%     { opacity: 0; }
-            2.5%   { opacity: 1; }
-            10%    { opacity: 1; }
-            12.5%  { opacity: 0; }
-            100%   { opacity: 0; }
+      /* Slideshow Animasi untuk Card Siklus (5 Gambar) dengan Crossfade Mulus */
+      @keyframes slideFade5 {
+        0% {
+          opacity: 0;
         }
-        .animate-slide-10-1 { animation: slideFade10 40s infinite 0s; opacity: 0; }
-        .animate-slide-10-2 { animation: slideFade10 40s infinite 4s; opacity: 0; }
-        .animate-slide-10-3 { animation: slideFade10 40s infinite 8s; opacity: 0; }
-        .animate-slide-10-4 { animation: slideFade10 40s infinite 12s; opacity: 0; }
-        .animate-slide-10-5 { animation: slideFade10 40s infinite 16s; opacity: 0; }
-        .animate-slide-10-6 { animation: slideFade10 40s infinite 20s; opacity: 0; }
-        .animate-slide-10-7 { animation: slideFade10 40s infinite 24s; opacity: 0; }
-        .animate-slide-10-8 { animation: slideFade10 40s infinite 28s; opacity: 0; }
-        .animate-slide-10-9 { animation: slideFade10 40s infinite 32s; opacity: 0; }
-        .animate-slide-10-10 { animation: slideFade10 40s infinite 36s; opacity: 0; }
-        
-        /* Styling Background Universitas untuk Beranda */
-        .hero-wrapper {
-            position: relative;
-            background-color: #ffffff;
-            overflow: hidden;
+        5% {
+          opacity: 1;
         }
+        20% {
+          opacity: 1;
+        }
+        25% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      .animate-slide-1 {
+        animation: slideFade5 20s infinite 0s;
+        opacity: 0;
+      }
+      .animate-slide-2 {
+        animation: slideFade5 20s infinite 4s;
+        opacity: 0;
+      }
+      .animate-slide-3 {
+        animation: slideFade5 20s infinite 8s;
+        opacity: 0;
+      }
+      .animate-slide-4 {
+        animation: slideFade5 20s infinite 12s;
+        opacity: 0;
+      }
+      .animate-slide-5 {
+        animation: slideFade5 20s infinite 16s;
+        opacity: 0;
+      }
 
-        
-        .hero-wrapper::before {
-            content: '';
-            position: absolute;
-            top: 0; 
-            left: 0; 
-            right: 0; 
-            bottom: 0;
-            background-image: url('images/BG.jpeg');
-            background-size: cover;
-            background-position: center;
-            opacity: 45%;
-            z-index: 0;
+      /* Slideshow Animasi untuk Card Siklus (10 Gambar khusus Siklus 2) dengan Crossfade Mulus */
+      @keyframes slideFade10 {
+        0% {
+          opacity: 0;
         }
+        2.5% {
+          opacity: 1;
+        }
+        10% {
+          opacity: 1;
+        }
+        12.5% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      .animate-slide-10-1 {
+        animation: slideFade10 40s infinite 0s;
+        opacity: 0;
+      }
+      .animate-slide-10-2 {
+        animation: slideFade10 40s infinite 4s;
+        opacity: 0;
+      }
+      .animate-slide-10-3 {
+        animation: slideFade10 40s infinite 8s;
+        opacity: 0;
+      }
+      .animate-slide-10-4 {
+        animation: slideFade10 40s infinite 12s;
+        opacity: 0;
+      }
+      .animate-slide-10-5 {
+        animation: slideFade10 40s infinite 16s;
+        opacity: 0;
+      }
+      .animate-slide-10-6 {
+        animation: slideFade10 40s infinite 20s;
+        opacity: 0;
+      }
+      .animate-slide-10-7 {
+        animation: slideFade10 40s infinite 24s;
+        opacity: 0;
+      }
+      .animate-slide-10-8 {
+        animation: slideFade10 40s infinite 28s;
+        opacity: 0;
+      }
+      .animate-slide-10-9 {
+        animation: slideFade10 40s infinite 32s;
+        opacity: 0;
+      }
+      .animate-slide-10-10 {
+        animation: slideFade10 40s infinite 36s;
+        opacity: 0;
+      }
 
+      /* Styling Background Universitas untuk Beranda */
+      .hero-wrapper {
+        position: relative;
+        background-color: #ffffff;
+        overflow: hidden;
+      }
+
+      .hero-wrapper::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("images/BG.jpeg");
+        background-size: cover;
+        background-position: center;
+        opacity: 45%;
+        z-index: 0;
+      }
+
+      .hero-wrapper::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          270deg,
+          rgba(255, 255, 255, 0.98) 0%,
+          rgba(255, 255, 255, 0.85) 45%,
+          rgba(255, 255, 255, 0.1) 100%
+        );
+        z-index: 1;
+      }
+
+      @media (max-width: 768px) {
         .hero-wrapper::after {
-            content: '';
-            position: absolute;
-            top: 0; 
-            left: 0; 
-            right: 0; 
-            bottom: 0;
-            background: linear-gradient(270deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.85) 45%, rgba(255,255,255,0.1) 100%);
-            z-index: 1;
+          background: linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.98) 0%,
+            rgba(255, 255, 255, 0.85) 40%,
+            rgba(255, 255, 255, 0.2) 100%
+          );
         }
+      }
 
-        @media (max-width: 768px) {
-            .hero-wrapper::after {
-                background: linear-gradient(0deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.85) 40%, rgba(255,255,255,0.2) 100%);
-            }
-        }
+      .hero-content {
+        position: relative;
+        z-index: 10;
+      }
 
-        .hero-content {
-            position: relative;
-            z-index: 10;
-        }
+      .profile-container {
+        position: relative;
+        background: linear-gradient(to bottom, #fecaca, #ffffff);
+        border-radius: 2.5rem;
+        padding: 1.5rem;
+        border: 10px solid white;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
 
-        .profile-container {
-            position: relative;
-            background: linear-gradient(to bottom, #fecaca, #ffffff);
-            border-radius: 2.5rem;
-            padding: 1.5rem;
-            border: 10px solid white;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
+      .floating-stat {
+        position: absolute;
+        background: white;
+        padding: 0.75rem 1.25rem;
+        border-radius: 1.25rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        z-index: 20;
+      }
 
-        .floating-stat {
-            position: absolute;
-            background: white;
-            padding: 0.75rem 1.25rem;
-            border-radius: 1.25rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            z-index: 20;
-        }
+      .floating-element {
+        animation: floating 4s ease-in-out infinite;
+      }
 
-        .floating-element {
-            animation: floating 4s ease-in-out infinite;
+      @keyframes floating {
+        0% {
+          transform: translateY(0px);
         }
+        50% {
+          transform: translateY(-15px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
 
-        @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
+      .profile-gradient {
+        background: linear-gradient(135deg, #991b1b 0%, #450a0a 100%);
+      }
 
-        .profile-gradient {
-            background: linear-gradient(135deg, #991b1b 0%, #450a0a 100%);
-        }
+      .info-card {
+        background: white;
+        border-radius: 1.5rem;
+        padding: 1.5rem;
+        border: 1px solid #f1f5f9;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+      }
+      .info-card:hover {
+        transform: translateY(-5px);
+      }
 
-        .info-card {
-            background: white;
-            border-radius: 1.5rem;
-            padding: 1.5rem;
-            border: 1px solid #f1f5f9;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-        .info-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .menu-lock {
-            overflow: hidden !important;
-            height: 100%;
-        }
-        #mobile-menu-backdrop {
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-        #mobile-menu-backdrop.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        #mobile-sidebar {
-            transform: translateX(100%);
-        }
-        #mobile-sidebar.active {
-            transform: translateX(0);
-        }
-
+      .menu-lock {
+        overflow: hidden !important;
+        height: 100%;
+      }
+      #mobile-menu-backdrop {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+      #mobile-menu-backdrop.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #mobile-sidebar {
+        transform: translateX(100%);
+      }
+      #mobile-sidebar.active {
+        transform: translateX(0);
+      }
     </style>
-</head>
+  </head>
 
-<body class="antialiased selection:bg-red-900 selection:text-white">
-
+  <body class="antialiased selection:bg-red-900 selection:text-white">
     <div class="ticker-wrap border-b border-red-950">
-        <div class="ticker font-heading text-xs uppercase tracking-widest font-bold">
-            <span class="mx-4">• PENDIDIKAN PANCASILA</span>
-            <span class="mx-4">• SMAN 1 BADEGAN</span>
-            <span class="mx-4">• PPL TERBIMBING 2026</span>
-            <span class="mx-4">• UNIVERSITAS MUHAMMADIYAH PONOROGO</span>
-            <span class="mx-4">• PENDIDIKAN PANCASILA</span>
-            <span class="mx-4">• SMAN 1 BADEGAN</span>
-            <span class="mx-4">• PPL TERBIMBING 2026</span>
-            <span class="mx-4">• UNIVERSITAS MUHAMMADIYAH PONOROGO</span>
-        </div>
+      <div
+        class="ticker font-heading text-xs uppercase tracking-widest font-bold"
+      >
+        <span class="mx-4">• PENDIDIKAN PANCASILA</span>
+        <span class="mx-4">• SMAN 1 BADEGAN</span>
+        <span class="mx-4">• PPL TERBIMBING 2026</span>
+        <span class="mx-4">• UNIVERSITAS MUHAMMADIYAH PONOROGO</span>
+        <span class="mx-4">• PENDIDIKAN PANCASILA</span>
+        <span class="mx-4">• SMAN 1 BADEGAN</span>
+        <span class="mx-4">• PPL TERBIMBING 2026</span>
+        <span class="mx-4">• UNIVERSITAS MUHAMMADIYAH PONOROGO</span>
+      </div>
     </div>
 
     <!Bagian Hero dengan Foto Profil dan Informasi Singkat Diperbarui>
     <!-- Header & Navigasi -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b-2 border-slate-100">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-4 cursor-pointer" onclick="showTab('home')">
-                <div class="w-12 h-12 bg-red-800 rounded-full flex items-center justify-center text-white shadow-lg">
-                    <span class="font-heading font-extrabold text-xl">U.</span>
-                </div>
-                <div>
-                    <span class="block text-xl font-extrabold text-slate-900 leading-none">Ummul Karima</span>
-                    <span class="text-[10px] text-red-800 tracking-[0.1em] uppercase font-bold">E-Portfolio</span>
-                </div>
-            </div>
-
-            <nav class="hidden md:flex items-center gap-8">
-                <button onclick="showTab('home')" id="nav-home" class="nav-link active-nav">Beranda</button>
-                <button onclick="showTab('profile')" id="nav-profile" class="nav-link">Profil Diri</button>
-                <button onclick="showTab('siklus1')" id="nav-siklus1" class="nav-link">Siklus 1</button>
-                <button onclick="showTab('siklus2')" id="nav-siklus2" class="nav-link">Siklus 2</button>
-                <button onclick="showTab('siklus3')" id="nav-siklus3" class="nav-link">Siklus 3</button>
-                <button onclick="showTab('artefak')" id="nav-artefak" class="nav-link">Artefak</button>
-            </nav>
-
-            <div class="flex items-center gap-4">
-                <button id="mobile-menu-button" type="button" class="md:hidden text-red-800 hover:text-red-950 transition p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-red-200" aria-label="Buka menu">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-                <div class="hidden lg:flex items-center">
-                    <button onclick="showTab('profile')" class="btn-solid py-2 px-6 text-xs">
-                        Hubungi
-                    </button>
-                </div>
-            </div>
+    <header
+      class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b-2 border-slate-100"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div
+          class="flex items-center gap-4 cursor-pointer"
+          onclick="showTab('home')"
+        >
+          <div
+            class="w-12 h-12 bg-red-800 rounded-full flex items-center justify-center text-white shadow-lg"
+          >
+            <span class="font-heading font-extrabold text-xl">U.</span>
+          </div>
+          <div>
+            <span
+              class="block text-xl font-extrabold text-slate-900 leading-none"
+              >Ummul Karima</span
+            >
+            <span
+              class="text-[10px] text-red-800 tracking-[0.1em] uppercase font-bold"
+              >E-Portfolio</span
+            >
+          </div>
         </div>
+
+        <nav class="hidden md:flex items-center gap-8">
+          <button
+            onclick="showTab('home')"
+            id="nav-home"
+            class="nav-link active-nav"
+          >
+            Beranda
+          </button>
+          <button
+            onclick="showTab('profile')"
+            id="nav-profile"
+            class="nav-link"
+          >
+            Profil Diri
+          </button>
+          <button
+            onclick="showTab('siklus1')"
+            id="nav-siklus1"
+            class="nav-link"
+          >
+            Siklus 1
+          </button>
+          <button
+            onclick="showTab('siklus2')"
+            id="nav-siklus2"
+            class="nav-link"
+          >
+            Siklus 2
+          </button>
+          <button
+            onclick="showTab('siklus3')"
+            id="nav-siklus3"
+            class="nav-link"
+          >
+            Siklus 3
+          </button>
+          <button
+            onclick="showTab('artefak')"
+            id="nav-artefak"
+            class="nav-link"
+          >
+            Artefak
+          </button>
+        </nav>
+
+        <div class="flex items-center gap-4">
+          <button
+            id="mobile-menu-button"
+            type="button"
+            class="md:hidden text-red-800 hover:text-red-950 transition p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-red-200"
+            aria-label="Buka menu"
+          >
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+          <div class="hidden lg:flex items-center">
+            <button
+              onclick="showTab('profile')"
+              class="btn-solid py-2 px-6 text-xs"
+            >
+              Hubungi
+            </button>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <div id="mobile-menu-backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm md:hidden"></div>
-    <aside id="mobile-sidebar" class="fixed top-0 right-0 h-full w-[85vw] max-w-sm bg-white border-l border-red-50 shadow-2xl z-50 md:hidden">
-        <div class="flex items-center justify-between px-6 py-5 border-b border-slate-100">
-            <div>
-                <p class="text-xs uppercase tracking-[0.3em] font-bold text-red-800">Menu</p>
-                <p class="text-sm font-semibold text-slate-900">Navigasi Cepat</p>
-            </div>
-            <button id="mobile-menu-close" type="button" class="text-red-900 p-2 rounded-full hover:bg-red-100 transition focus:outline-none focus:ring-2 focus:ring-red-200" aria-label="Tutup menu">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
+    <div
+      id="mobile-menu-backdrop"
+      class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm md:hidden"
+    ></div>
+    <aside
+      id="mobile-sidebar"
+      class="fixed top-0 right-0 h-full w-[85vw] max-w-sm bg-white border-l border-red-50 shadow-2xl z-50 md:hidden"
+    >
+      <div
+        class="flex items-center justify-between px-6 py-5 border-b border-slate-100"
+      >
+        <div>
+          <p class="text-xs uppercase tracking-[0.3em] font-bold text-red-800">
+            Menu
+          </p>
+          <p class="text-sm font-semibold text-slate-900">Navigasi Cepat</p>
         </div>
-        <nav class="px-6 py-6 space-y-3">
-            <button onclick="closeMobileMenu(); showTab('home')" class="w-full text-left py-3 px-4 rounded-2xl text-slate-900 hover:bg-red-50 transition font-semibold">Beranda</button>
-            <button onclick="closeMobileMenu(); showTab('profile')" class="w-full text-left py-3 px-4 rounded-2xl text-slate-900 hover:bg-red-50 transition font-semibold">Profil Diri</button>
-            <button onclick="closeMobileMenu(); showTab('siklus1')" class="w-full text-left py-3 px-4 rounded-2xl text-slate-900 hover:bg-red-50 transition font-semibold">Siklus 1</button>
-            <button onclick="closeMobileMenu(); showTab('siklus2')" class="w-full text-left py-3 px-4 rounded-2xl text-slate-900 hover:bg-red-50 transition font-semibold">Siklus 2</button>
-            <button onclick="closeMobileMenu(); showTab('siklus3')" class="w-full text-left py-3 px-4 rounded-2xl text-slate-900 hover:bg-red-50 transition font-semibold">Siklus 3</button>
-            <button onclick="closeMobileMenu(); showTab('artefak')" class="w-full text-left py-3 px-4 rounded-2xl text-slate-900 hover:bg-red-50 transition font-semibold">Artefak</button>
-            <button onclick="closeMobileMenu(); showTab('profile')" class="w-full text-left py-3 px-4 rounded-2xl bg-red-900 text-white hover:bg-red-800 transition font-semibold">Hubungi</button>
-        </nav>
+        <button
+          id="mobile-menu-close"
+          type="button"
+          class="text-red-900 p-2 rounded-full hover:bg-red-100 transition focus:outline-none focus:ring-2 focus:ring-red-200"
+          aria-label="Tutup menu"
+        >
+          <i class="fas fa-times text-2xl"></i>
+        </button>
+      </div>
+      <nav class="px-6 py-6 space-y-3">
+        <button
+          onclick="
+            closeMobileMenu();
+            showTab('home');
+          "
+          class="w-full text-left py-3 px-4 rounded-2xl text-slate-900 hover:bg-red-50 transition font-semibold"
+        >
+          Beranda
+        </button>
+        <button
+          onclick="
+            closeMobileMenu();
+            showTab('profile');
+          "
+          class="w-full text-left py-3 px-4 rounded-2xl text-slate-900 hover:bg-red-50 transition font-semibold"
+        >
+          Profil Diri
+        </button>
+        <button
+          onclick="
+            closeMobileMenu();
+            showTab('siklus1');
+          "
+          class="w-full text-left py-3 px-4 rounded-2xl text-slate-900 hover:bg-red-50 transition font-semibold"
+        >
+          Siklus 1
+        </button>
+        <button
+          onclick="
+            closeMobileMenu();
+            showTab('siklus2');
+          "
+          class="w-full text-left py-3 px-4 rounded-2xl text-slate-900 hover:bg-red-50 transition font-semibold"
+        >
+          Siklus 2
+        </button>
+        <button
+          onclick="
+            closeMobileMenu();
+            showTab('siklus3');
+          "
+          class="w-full text-left py-3 px-4 rounded-2xl text-slate-900 hover:bg-red-50 transition font-semibold"
+        >
+          Siklus 3
+        </button>
+        <button
+          onclick="
+            closeMobileMenu();
+            showTab('artefak');
+          "
+          class="w-full text-left py-3 px-4 rounded-2xl text-slate-900 hover:bg-red-50 transition font-semibold"
+        >
+          Artefak
+        </button>
+        <button
+          onclick="
+            closeMobileMenu();
+            showTab('profile');
+          "
+          class="w-full text-left py-3 px-4 rounded-2xl bg-red-900 text-white hover:bg-red-800 transition font-semibold"
+        >
+          Hubungi
+        </button>
+      </nav>
     </aside>
 
     <!-- KONTEN: BERANDA -->
     <main id="home" class="tab-content active">
-        <section class="hero-wrapper px-6 py-16 md:py-24 border-b border-red-50">
-            <div class="hero-content max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-    
-    <div class="order-1 relative">
-        <div class="absolute -top-10 -left-10 w-64 h-64 bg-red-100 rounded-full blur-3xl opacity-60"></div>
-        <div class="profile-container mx-auto max-w-sm">
-            <div class="floating-stat top-10 -right-4 floating-element" style="animation-delay: 0s;">
-                <div class="bg-red-800 text-white p-2 rounded-lg"><i class="fas fa-school"></i></div>
-                <div><p class="text-xs text-gray-400 font-medium">Penempatan</p><p class="text-sm font-bold text-slate-800">SMAN 1 Badegan</p></div>
-            </div>
-            <div class="floating-stat bottom-20 -left-6 floating-element" style="animation-delay: 1s;">
-                <div class="bg-blue-600 text-white p-2 rounded-lg"><i class="fas fa-users"></i></div>
-                <div><p class="text-xs text-gray-400 font-medium">Sasaran</p><p class="text-sm font-bold text-slate-800">Kelas Fase E</p></div>
-            </div>
-            
-            <div class="rounded-2xl overflow-hidden relative z-10 aspect-[4/5] mt-4">
-    <img src="images/profile.jpeg" 
-         alt="Foto Profil Ummul Karima" 
-         class="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-110 cursor-pointer">
-</div>
-            <div class="bg-white p-4 text-center border-t border-gray-100 mt-2 rounded-xl relative z-10">
+      <section class="hero-wrapper px-6 py-16 md:py-24 border-b border-red-50">
+        <div
+          class="hero-content max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center"
+        >
+          <div class="order-1 relative">
+            <div
+              class="absolute -top-10 -left-10 w-64 h-64 bg-red-100 rounded-full blur-3xl opacity-60"
+            ></div>
+            <div class="profile-container mx-auto max-w-sm">
+              <div
+                class="floating-stat top-10 -right-4 floating-element"
+                style="animation-delay: 0s"
+              >
+                <div class="bg-red-800 text-white p-2 rounded-lg">
+                  <i class="fas fa-school"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-gray-400 font-medium">Penempatan</p>
+                  <p class="text-sm font-bold text-slate-800">SMAN 1 Badegan</p>
+                </div>
+              </div>
+              <div
+                class="floating-stat bottom-20 -left-6 floating-element"
+                style="animation-delay: 1s"
+              >
+                <div class="bg-blue-600 text-white p-2 rounded-lg">
+                  <i class="fas fa-users"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-gray-400 font-medium">Sasaran</p>
+                  <p class="text-sm font-bold text-slate-800">Kelas Fase E</p>
+                </div>
+              </div>
+
+              <div
+                class="rounded-2xl overflow-hidden relative z-10 aspect-[4/5] mt-4"
+              >
+                <img
+                  src="images/profile.jpeg"
+                  alt="Foto Profil Ummul Karima"
+                  class="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-110 cursor-pointer"
+                />
+              </div>
+              <div
+                class="bg-white p-4 text-center border-t border-gray-100 mt-2 rounded-xl relative z-10"
+              >
                 <p class="font-bold text-gray-800">Ummul Karima, S.Pd.</p>
-                <p class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mt-1">Pendidikan Pancasila</p>
+                <p
+                  class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mt-1"
+                >
+                  Pendidikan Pancasila
+                </p>
+              </div>
             </div>
+          </div>
+
+          <div class="order-2 space-y-8">
+            <div
+              class="inline-flex items-center gap-3 border-2 border-red-900 rounded-full px-5 py-2 text-xs font-bold text-red-900 uppercase tracking-widest bg-white/50 backdrop-blur-sm shadow-sm"
+            >
+              <span class="w-2 h-2 rounded-full bg-red-900"></span> Refleksi
+              Akhir PPL Terbimbing
+            </div>
+            <h1
+              class="text-6xl lg:text-[5.5rem] font-extrabold text-slate-900 leading-[1.05] tracking-tighter drop-shadow-sm"
+            >
+              Membangun <br />
+              <span class="text-red-800">Karakter</span> <br />
+              Guru Profesi.
+            </h1>
+            <p
+              class="text-slate-800 font-medium text-lg leading-relaxed max-w-xl drop-shadow-sm"
+            >
+              E-Portfolio ini adalah refleksi awal sebagai fondasi dasar
+              karakter keguruan saya, mencakup analisis mendalam terhadap
+              praktik mengajar selama 3 siklus PPL di SMAN 1 Badegan.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-4">
+              <button
+                onclick="showTab('profile')"
+                class="btn-solid flex items-center gap-2"
+              >
+                Kenali Profil Saya <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+              <button
+                onclick="showTab('siklus1')"
+                class="btn-outline bg-white/50 backdrop-blur-sm"
+              >
+                Mulai Jelajah Siklus
+              </button>
+            </div>
+          </div>
         </div>
-    </div>
+      </section>
 
-    <div class="order-2 space-y-8">
-                    <div class="inline-flex items-center gap-3 border-2 border-red-900 rounded-full px-5 py-2 text-xs font-bold text-red-900 uppercase tracking-widest bg-white/50 backdrop-blur-sm shadow-sm">
-                        <span class="w-2 h-2 rounded-full bg-red-900"></span> Refleksi Akhir PPL Terbimbing
-                    </div>
-                    <h1 class="text-6xl lg:text-[5.5rem] font-extrabold text-slate-900 leading-[1.05] tracking-tighter drop-shadow-sm">
-                        Membangun <br> 
-                        <span class="text-red-800">Karakter</span> <br>
-                        Guru Profesi.
-                    </h1>
-                    <p class="text-slate-800 font-medium text-lg leading-relaxed max-w-xl drop-shadow-sm">
-                        E-Portfolio ini adalah refleksi awal sebagai fondasi dasar karakter keguruan saya, mencakup analisis mendalam terhadap praktik mengajar selama 3 siklus PPL di SMAN 1 Badegan.
-                    </p>
-                    <div class="flex flex-wrap gap-4 pt-4">
-                        <button onclick="showTab('profile')" class="btn-solid flex items-center gap-2">
-                            Kenali Profil Saya <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
-                        <button onclick="showTab('siklus1')" class="btn-outline bg-white/50 backdrop-blur-sm">
-                            Mulai Jelajah Siklus
-                        </button>
-                    </div>
+      <!-- Lokasi PPL & Pendidikan Section -->
+      <section class="py-20 px-6 max-w-7xl mx-auto border-b border-red-50">
+        <div
+          class="flex items-center gap-4 mb-12 justify-center md:justify-start"
+        >
+          <div class="h-1 w-12 bg-red-800 rounded-full"></div>
+          <h2 class="text-3xl font-bold text-gray-900">
+            Lokasi Pendidikan & Praktik
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10">
+          <!-- Card UMPO -->
+          <div
+            class="bg-white p-6 md:p-8 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition duration-500 group flex flex-col h-full"
+          >
+            <div class="flex items-start justify-between mb-6">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-14 h-14 bg-red-50 text-red-800 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-red-800 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="fas fa-university text-2xl"></i>
                 </div>
-
-</div>
-        </section>
-
-        <!-------BAGIAN TIMELINE SIKLUS DENGAN SLIDESHOW ANIMASI YANG DIPERBARUI------>
-              <!-- FWA Style Grid Section: Jelajah Siklus PPL -->
-        <section class="py-20 px-6 max-w-[1400px] mx-auto">
-            <div class="flex items-center justify-between mb-10">
-                <h2 class="text-4xl font-extrabold text-slate-900 font-heading uppercase tracking-tighter">Timeline <span class="text-red-800">Siklus</span></h2>
-                <div class="h-[2px] flex-grow bg-slate-200 mx-8 hidden md:block"></div>
-                <span class="text-xs font-bold text-slate-400 uppercase tracking-[0.2em] hidden md:block">Praktik Pengalaman Lapangan 2026</span>
+                <div>
+                  <h3 class="font-bold text-slate-800 text-lg leading-tight">
+                    Universitas Muhammadiyah Ponorogo
+                  </h3>
+                  <p
+                    class="text-xs text-red-600 font-semibold uppercase tracking-wider mt-1"
+                  >
+                    Pendidikan PPG Prajabatan
+                  </p>
+                </div>
+              </div>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Card Siklus 1 -->
-                <div onclick="showTab('siklus1')" class="group relative h-[450px] bg-slate-900 overflow-hidden rounded-3xl cursor-pointer shadow-lg">
-                    <!-- Slideshow Container 5 Gambar -->
-                    <div class="absolute inset-0 w-full h-full transition-all duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-40 bg-slate-800">
-                        <img src="images/1S1.jpg" onerror="this.src='https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=800&auto=format&fit=crop'" alt="Siklus 1 Slide 1" class="absolute inset-0 w-full h-full object-cover animate-slide-1">
-                        <img src="images/2S1.jpg" onerror="this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop'" alt="Siklus 1 Slide 2" class="absolute inset-0 w-full h-full object-cover animate-slide-2">
-                        <img src="images/3S1.jpg" onerror="this.src='https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=800&auto=format&fit=crop'" alt="Siklus 1 Slide 3" class="absolute inset-0 w-full h-full object-cover animate-slide-3">
-                        <img src="images/4S1.jpg" onerror="this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop'" alt="Siklus 1 Slide 4" class="absolute inset-0 w-full h-full object-cover animate-slide-4">
-                        <img src="images/5S1.jpg" onerror="this.src='https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=800&auto=format&fit=crop'" alt="Siklus 1 Slide 5" class="absolute inset-0 w-full h-full object-cover animate-slide-5">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-                    
-                    <div class="absolute top-6 left-6 flex flex-col gap-2">
-                        <span class="bg-red-800 text-white text-[10px] font-bold px-4 py-1.5 uppercase tracking-widest inline-block w-max rounded-full shadow-md">Siklus 1</span>
-                    </div>
-                    
-                    <div class="absolute top-6 right-6 text-right">
-                        <p class="text-white/90 font-mono text-xl font-bold tracking-tight">28 APRIL</p>
-                        <p class="text-white/50 font-mono text-xs tracking-widest">2026</p>
-                    </div>
-                    
-                    <div class="absolute bottom-8 left-8 right-8 transform transition-transform duration-500 translate-y-4 group-hover:translate-y-0">
-                        <p class="text-red-400 font-bold text-xs uppercase tracking-widest mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Tahap Identifikasi</p>
-                        <h3 class="text-3xl font-extrabold font-heading text-white leading-[1.1]">Pemahaman Hak & Kewajiban</h3>
-                    </div>
-                </div>
 
-                <!-- Card Siklus 2 (10 Gambar) -->
-                <div onclick="showTab('siklus2')" class="group relative h-[450px] bg-slate-900 overflow-hidden rounded-3xl cursor-pointer shadow-lg md:-translate-y-6">
-                    <!-- Slideshow Container 10 Gambar -->
-                    <div class="absolute inset-0 w-full h-full transition-all duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-40 bg-slate-800">
-                        <img src="images/1S2.jpg" onerror="this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop'" alt="Siklus 2 Slide 1" class="absolute inset-0 w-full h-full object-cover animate-slide-10-1">
-                        <img src="images/2S2.jpg" onerror="this.src='https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=800&auto=format&fit=crop'" alt="Siklus 2 Slide 2" class="absolute inset-0 w-full h-full object-cover animate-slide-10-2">
-                        <img src="images/3S2.jpg" onerror="this.src='https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=800&auto=format&fit=crop'" alt="Siklus 2 Slide 3" class="absolute inset-0 w-full h-full object-cover animate-slide-10-3">
-                        <img src="images/4S2.jpg" onerror="this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop'" alt="Siklus 2 Slide 4" class="absolute inset-0 w-full h-full object-cover animate-slide-10-4">
-                        <img src="images/5S2.jpg" onerror="this.src='https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=800&auto=format&fit=crop'" alt="Siklus 2 Slide 5" class="absolute inset-0 w-full h-full object-cover animate-slide-10-5">
-                        <img src="images/6S2.jpg" onerror="this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop'" alt="Siklus 2 Slide 6" class="absolute inset-0 w-full h-full object-cover animate-slide-10-6">
-                        <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=800&auto=format&fit=crop" alt="Siklus 2 Slide 7" class="absolute inset-0 w-full h-full object-cover animate-slide-10-7">
-                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=800&auto=format&fit=crop" alt="Siklus 2 Slide 8" class="absolute inset-0 w-full h-full object-cover animate-slide-10-8">
-                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop" alt="Siklus 2 Slide 9" class="absolute inset-0 w-full h-full object-cover animate-slide-10-9">
-                        <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=800&auto=format&fit=crop" alt="Siklus 2 Slide 10" class="absolute inset-0 w-full h-full object-cover animate-slide-10-10">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-                    
-                    <div class="absolute top-6 left-6 flex flex-col gap-2">
-                        <span class="bg-blue-600 text-white text-[10px] font-bold px-4 py-1.5 uppercase tracking-widest inline-block w-max rounded-full shadow-md">Siklus 2</span>
-                    </div>
-                    
-                    <div class="absolute top-6 right-6 text-right">
-                        <p class="text-white/90 font-mono text-xl font-bold tracking-tight">05 & 12 MAY </p>
-                        <p class="text-white/50 font-mono text-xs tracking-widest">2026</p>
-                    </div>
-                    
-                    <div class="absolute bottom-8 left-8 right-8 transform transition-transform duration-500 translate-y-4 group-hover:translate-y-0">
-                        <p class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Tahap Pengembangan</p>
-                        <h3 class="text-3xl font-extrabold font-heading text-white leading-[1.1]">Implementasi Sishankamrata</h3>
-                    </div>
-                </div>
+            <!-- Map Iframe -->
+            <div
+              class="w-full h-64 rounded-2xl overflow-hidden border-2 border-slate-100 mb-6 relative bg-slate-50"
+            >
+              <iframe
+                class="absolute inset-0 w-full h-full"
+                src="https://maps.google.com/maps?q=Universitas%20Muhammadiyah%20Ponorogo&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+              ></iframe>
+            </div>
 
-                <!-- Card Siklus 3 -->
-                <div onclick="showTab('siklus3')" class="group relative h-[450px] bg-slate-900 overflow-hidden rounded-3xl cursor-pointer shadow-lg">
-                    <!-- Slideshow Container 5 Gambar -->
-                    <div class="absolute inset-0 w-full h-full transition-all duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-40 bg-slate-800">
-                        <img src="image_f09c78.png" onerror="this.src='https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=800&auto=format&fit=crop'" alt="Siklus 3 Slide 1" class="absolute inset-0 w-full h-full object-cover animate-slide-1">
-                        <img src="image_675fb3.jpg" onerror="this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop'" alt="Siklus 3 Slide 2" class="absolute inset-0 w-full h-full object-cover animate-slide-2">
-                        <img src="image_674c77.png" onerror="this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop'" alt="Siklus 3 Slide 3" class="absolute inset-0 w-full h-full object-cover animate-slide-3">
-                        <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=800&auto=format&fit=crop" alt="Siklus 3 Slide 4" class="absolute inset-0 w-full h-full object-cover animate-slide-4">
-                        <img src="image_6750d4.jpg" onerror="this.src='https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=800&auto=format&fit=crop'" alt="Siklus 3 Slide 5" class="absolute inset-0 w-full h-full object-cover animate-slide-5">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-                    
-                    <div class="absolute top-6 left-6 flex flex-col gap-2">
-                        <span class="bg-amber-600 text-white text-[10px] font-bold px-4 py-1.5 uppercase tracking-widest inline-block w-max rounded-full shadow-md">Siklus 3</span>
-                    </div>
-                    
-                    <div class="absolute top-6 right-6 text-right">
-                        <p class="text-white/90 font-mono text-xl font-bold tracking-tight">19 MAY</p>
-                        <p class="text-white/50 font-mono text-xs tracking-widest">2026</p>
-                    </div>
-                    
-                    <div class="absolute bottom-8 left-8 right-8 transform transition-transform duration-500 translate-y-4 group-hover:translate-y-0">
-                        <p class="text-amber-400 font-bold text-xs uppercase tracking-widest mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Tahap Evaluasi</p>
-                        <h3 class="text-3xl font-extrabold font-heading text-white leading-[1.1]">Diseminasi & Keberlanjutan</h3>
-                    </div>
-                </div>
+            <div
+              class="mt-auto flex flex-col sm:flex-row gap-4 items-center justify-between"
+            >
+              <div
+                class="flex items-start gap-2 text-slate-500 text-xs w-full sm:w-2/3"
+              >
+                <i
+                  class="fas fa-map-marker-alt text-red-400 mt-1 text-base"
+                ></i>
+                <p class="leading-relaxed">
+                  Jl. Budi Utomo No.10, Ronowijayan, Kec. Siman, Kabupaten
+                  Ponorogo, Jawa Timur 63471
+                </p>
+              </div>
+              <a
+                href="https://umpo.ac.id/"
+                target="_blank"
+                class="w-full sm:w-auto px-5 py-2.5 bg-slate-50 border border-slate-200 text-slate-700 hover:bg-red-800 hover:text-white hover:border-red-800 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 shrink-0"
+              >
+                <i class="fas fa-globe text-sm"></i> Kunjungi Web
+              </a>
             </div>
-        </section>
+          </div>
 
-        <!-- Hasil Observasi Awal -->
-        <section class="py-20 px-6 max-w-7xl mx-auto">
-            <div class="flex items-center gap-4 mb-12 justify-center md:justify-start">
-                <div class="h-1 w-12 bg-red-800 rounded-full"></div>
-                <h2 class="text-3xl font-bold text-gray-900">Hasil Observasi Awal</h2>
-            </div>
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="bg-white p-10 rounded-[2.5rem] border border-red-50 shadow-sm hover:shadow-md transition">
-                    <div class="w-14 h-14 bg-red-50 text-red-800 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-search-location text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-slate-800">Siklus 1: Identifikasi</h3>
-                    <p class="text-slate-600 leading-relaxed mb-6">Ditemukan bahwa murid cenderung pasif saat membahas istilah kewarganegaraan yang abstrak. Diperlukan media interaktif untuk memicu pemahaman awal.</p>
-                    <button onclick="showTab('siklus1')" class="text-red-800 font-bold hover:underline text-sm uppercase tracking-wider">Pelajari Siklus 1 →</button>
+          <!-- Card SMAN 1 Badegan -->
+          <div
+            class="bg-white p-6 md:p-8 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition duration-500 group flex flex-col h-full"
+          >
+            <div class="flex items-start justify-between mb-6">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-14 h-14 bg-blue-50 text-blue-800 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-blue-800 group-hover:text-white transition-colors duration-300"
+                >
+                  <i class="fas fa-school text-2xl"></i>
                 </div>
-                <div class="bg-white p-10 rounded-[2.5rem] border border-blue-50 shadow-sm hover:shadow-md transition">
-                    <div class="w-14 h-14 bg-blue-50 text-blue-800 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-users-viewfinder text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-slate-800">Siklus 2: Pengembangan</h3>
-                    <p class="text-slate-600 leading-relaxed mb-6">Tantangan pada jumlah murid yang besar (34 orang). Strategi Gallery Walk dipilih untuk memastikan setiap murid memiliki peran aktif (Scaffolding).</p>
-                    <button onclick="showTab('siklus2')" class="text-blue-800 font-bold hover:underline text-sm uppercase tracking-wider">Pelajari Siklus 2 →</button>
+                <div>
+                  <h3 class="font-bold text-slate-800 text-lg leading-tight">
+                    SMAN 1 Badegan
+                  </h3>
+                  <p
+                    class="text-xs text-blue-600 font-semibold uppercase tracking-wider mt-1"
+                  >
+                    Lokasi Praktik PPL (Fase E)
+                  </p>
                 </div>
+              </div>
             </div>
-        </section>
+
+            <!-- Map Iframe -->
+            <div
+              class="w-full h-64 rounded-2xl overflow-hidden border-2 border-slate-100 mb-6 relative bg-slate-50"
+            >
+              <iframe
+                class="absolute inset-0 w-full h-full"
+                src="https://maps.google.com/maps?q=SMAN%201%20Badegan&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+              ></iframe>
+            </div>
+
+            <div
+              class="mt-auto flex flex-col sm:flex-row gap-4 items-center justify-between"
+            >
+              <div
+                class="flex items-start gap-2 text-slate-500 text-xs w-full sm:w-2/3"
+              >
+                <i
+                  class="fas fa-map-marker-alt text-blue-400 mt-1 text-base"
+                ></i>
+                <p class="leading-relaxed">
+                  Jl. Ponorogo - Wonogiri No.4, Karangan, Kec. Badegan,
+                  Kabupaten Ponorogo, Jawa Timur 63455
+                </p>
+              </div>
+              <a
+                href="https://sman1badegan.sch.id/"
+                target="_blank"
+                class="w-full sm:w-auto px-5 py-2.5 bg-slate-50 border border-slate-200 text-slate-700 hover:bg-blue-800 hover:text-white hover:border-blue-800 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 shrink-0"
+              >
+                <i class="fas fa-globe text-sm"></i> Kunjungi Web
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-------BAGIAN TIMELINE SIKLUS DENGAN SLIDESHOW ANIMASI YANG DIPERBARUI------>
+      <!-- FWA Style Grid Section: Jelajah Siklus PPL -->
+      <section class="py-20 px-6 max-w-[1400px] mx-auto">
+        <div class="flex items-center justify-between mb-10">
+          <h2
+            class="text-4xl font-extrabold text-slate-900 font-heading uppercase tracking-tighter"
+          >
+            Timeline <span class="text-red-800">Siklus</span>
+          </h2>
+          <div
+            class="h-[2px] flex-grow bg-slate-200 mx-8 hidden md:block"
+          ></div>
+          <span
+            class="text-xs font-bold text-slate-400 uppercase tracking-[0.2em] hidden md:block"
+            >Praktik Pengalaman Lapangan 2026</span
+          >
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Card Siklus 1 -->
+          <div
+            onclick="showTab('siklus1')"
+            class="group relative h-[450px] bg-slate-900 overflow-hidden rounded-3xl cursor-pointer shadow-lg"
+          >
+            <!-- Slideshow Container 5 Gambar -->
+            <div
+              class="absolute inset-0 w-full h-full transition-all duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-40 bg-slate-800"
+            >
+              <img
+                src="images/1S1.jpg"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=800&auto=format&fit=crop'
+                "
+                alt="Siklus 1 Slide 1"
+                class="absolute inset-0 w-full h-full object-cover animate-slide-1"
+              />
+              <img
+                src="images/2S1.jpg"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop'
+                "
+                alt="Siklus 1 Slide 2"
+                class="absolute inset-0 w-full h-full object-cover animate-slide-2"
+              />
+              <img
+                src="images/3S1.jpg"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=800&auto=format&fit=crop'
+                "
+                alt="Siklus 1 Slide 3"
+                class="absolute inset-0 w-full h-full object-cover animate-slide-3"
+              />
+              <img
+                src="images/4S1.jpg"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop'
+                "
+                alt="Siklus 1 Slide 4"
+                class="absolute inset-0 w-full h-full object-cover animate-slide-4"
+              />
+              <img
+                src="images/5S1.jpg"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=800&auto=format&fit=crop'
+                "
+                alt="Siklus 1 Slide 5"
+                class="absolute inset-0 w-full h-full object-cover animate-slide-5"
+              />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"
+            ></div>
+
+            <div class="absolute top-6 left-6 flex flex-col gap-2">
+              <span
+                class="bg-red-800 text-white text-[10px] font-bold px-4 py-1.5 uppercase tracking-widest inline-block w-max rounded-full shadow-md"
+                >Siklus 1</span
+              >
+            </div>
+
+            <div class="absolute top-6 right-6 text-right">
+              <p
+                class="text-white/90 font-mono text-xl font-bold tracking-tight"
+              >
+                28 APRIL
+              </p>
+              <p class="text-white/50 font-mono text-xs tracking-widest">
+                2026
+              </p>
+            </div>
+
+            <div
+              class="absolute bottom-8 left-8 right-8 transform transition-transform duration-500 translate-y-4 group-hover:translate-y-0"
+            >
+              <p
+                class="text-red-400 font-bold text-xs uppercase tracking-widest mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"
+              >
+                Tahap Identifikasi
+              </p>
+              <h3
+                class="text-3xl font-extrabold font-heading text-white leading-[1.1]"
+              >
+                Pemahaman Hak & Kewajiban
+              </h3>
+            </div>
+          </div>
+
+          <!-- Card Siklus 2 (10 Gambar) -->
+          <div
+            onclick="showTab('siklus2')"
+            class="group relative h-[450px] bg-slate-900 overflow-hidden rounded-3xl cursor-pointer shadow-lg md:-translate-y-6"
+          >
+            <!-- Slideshow Container 10 Gambar -->
+            <div
+              class="absolute inset-0 w-full h-full transition-all duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-40 bg-slate-800"
+            >
+              <img
+                src="images/1S2.jpg"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop'
+                "
+                alt="Siklus 2 Slide 1"
+                class="absolute inset-0 w-full h-full object-cover animate-slide-10-1"
+              />
+              <img
+                src="images/2S2.jpg"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=800&auto=format&fit=crop'
+                "
+                alt="Siklus 2 Slide 2"
+                class="absolute inset-0 w-full h-full object-cover animate-slide-10-2"
+              />
+              <img
+                src="images/3S2.jpg"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=800&auto=format&fit=crop'
+                "
+                alt="Siklus 2 Slide 3"
+                class="absolute inset-0 w-full h-full object-cover animate-slide-10-3"
+              />
+              <img
+                src="images/4S2.jpg"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop'
+                "
+                alt="Siklus 2 Slide 4"
+                class="absolute inset-0 w-full h-full object-cover animate-slide-10-4"
+              />
+              <img
+                src="images/5S2.jpg"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=800&auto=format&fit=crop'
+                "
+                alt="Siklus 2 Slide 5"
+                class="absolute inset-0 w-full h-full object-cover animate-slide-10-5"
+              />
+              <img
+                src="images/6S2.jpg"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop'
+                "
+                alt="Siklus 2 Slide 6"
+                class="absolute inset-0 w-full h-full object-cover animate-slide-10-6"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=800&auto=format&fit=crop"
+                alt="Siklus 2 Slide 7"
+                class="absolute inset-0 w-full h-full object-cover animate-slide-10-7"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=800&auto=format&fit=crop"
+                alt="Siklus 2 Slide 8"
+                class="absolute inset-0 w-full h-full object-cover animate-slide-10-8"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop"
+                alt="Siklus 2 Slide 9"
+                class="absolute inset-0 w-full h-full object-cover animate-slide-10-9"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=800&auto=format&fit=crop"
+                alt="Siklus 2 Slide 10"
+                class="absolute inset-0 w-full h-full object-cover animate-slide-10-10"
+              />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"
+            ></div>
+
+            <div class="absolute top-6 left-6 flex flex-col gap-2">
+              <span
+                class="bg-blue-600 text-white text-[10px] font-bold px-4 py-1.5 uppercase tracking-widest inline-block w-max rounded-full shadow-md"
+                >Siklus 2</span
+              >
+            </div>
+
+            <div class="absolute top-6 right-6 text-right">
+              <p
+                class="text-white/90 font-mono text-xl font-bold tracking-tight"
+              >
+                05 MAY
+              </p>
+              <p class="text-white/50 font-mono text-xs tracking-widest">
+                2026
+              </p>
+            </div>
+
+            <div
+              class="absolute bottom-8 left-8 right-8 transform transition-transform duration-500 translate-y-4 group-hover:translate-y-0"
+            >
+              <p
+                class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"
+              >
+                Tahap Pengembangan
+              </p>
+              <h3
+                class="text-3xl font-extrabold font-heading text-white leading-[1.1]"
+              >
+                Implementasi Sishankamrata
+              </h3>
+            </div>
+          </div>
+
+          <!-- Card Siklus 3 -->
+          <div
+            onclick="showTab('siklus3')"
+            class="group relative h-[450px] bg-slate-900 overflow-hidden rounded-3xl cursor-pointer shadow-lg"
+          >
+            <!-- Slideshow Container 5 Gambar -->
+            <div
+              class="absolute inset-0 w-full h-full transition-all duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-40 bg-slate-800"
+            >
+              <img
+                src="image_f09c78.png"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=800&auto=format&fit=crop'
+                "
+                alt="Siklus 3 Slide 1"
+                class="absolute inset-0 w-full h-full object-cover animate-slide-1"
+              />
+              <img
+                src="image_675fb3.jpg"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop'
+                "
+                alt="Siklus 3 Slide 2"
+                class="absolute inset-0 w-full h-full object-cover animate-slide-2"
+              />
+              <img
+                src="image_674c77.png"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop'
+                "
+                alt="Siklus 3 Slide 3"
+                class="absolute inset-0 w-full h-full object-cover animate-slide-3"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=800&auto=format&fit=crop"
+                alt="Siklus 3 Slide 4"
+                class="absolute inset-0 w-full h-full object-cover animate-slide-4"
+              />
+              <img
+                src="image_6750d4.jpg"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=800&auto=format&fit=crop'
+                "
+                alt="Siklus 3 Slide 5"
+                class="absolute inset-0 w-full h-full object-cover animate-slide-5"
+              />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"
+            ></div>
+
+            <div class="absolute top-6 left-6 flex flex-col gap-2">
+              <span
+                class="bg-amber-600 text-white text-[10px] font-bold px-4 py-1.5 uppercase tracking-widest inline-block w-max rounded-full shadow-md"
+                >Siklus 3</span
+              >
+            </div>
+
+            <div class="absolute top-6 right-6 text-right">
+              <p
+                class="text-white/90 font-mono text-xl font-bold tracking-tight"
+              >
+                12 MAY
+              </p>
+              <p class="text-white/50 font-mono text-xs tracking-widest">
+                2026
+              </p>
+            </div>
+
+            <div
+              class="absolute bottom-8 left-8 right-8 transform transition-transform duration-500 translate-y-4 group-hover:translate-y-0"
+            >
+              <p
+                class="text-amber-400 font-bold text-xs uppercase tracking-widest mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"
+              >
+                Tahap Evaluasi
+              </p>
+              <h3
+                class="text-3xl font-extrabold font-heading text-white leading-[1.1]"
+              >
+                Diseminasi & Keberlanjutan
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hasil Observasi Awal (Update 3 Siklus) -->
+      <section class="pb-20 px-6 max-w-[1400px] mx-auto pt-10">
+        <div
+          class="flex items-center gap-4 mb-12 justify-center md:justify-start"
+        >
+          <div class="h-1 w-12 bg-red-800 rounded-full"></div>
+          <h2 class="text-3xl font-bold text-gray-900">
+            Fokus Pengembangan Siklus
+          </h2>
+        </div>
+        <div class="grid lg:grid-cols-3 gap-8">
+          <!-- Card Siklus 1 -->
+          <div
+            class="bg-white p-8 rounded-[2.5rem] border-2 border-red-50 shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 group flex flex-col h-full"
+          >
+            <div
+              class="w-14 h-14 bg-red-50 text-red-800 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-red-800 group-hover:text-white transition-colors"
+            >
+              <i class="fas fa-search-location text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3 text-slate-800">
+              Siklus 1: Identifikasi
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+              Menghadapi tantangan kepasifan murid pada materi abstrak. Fokus
+              pada visualisasi materi dasar (Hak & Kewajiban) melalui Canva dan
+              Asesmen Formatif Wordwall.
+            </p>
+            <button
+              onclick="showTab('siklus1')"
+              class="text-red-800 font-bold hover:text-red-600 text-sm uppercase tracking-wider flex items-center gap-2 mt-auto"
+            >
+              Pelajari Siklus 1 <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+          <!-- Card Siklus 2 -->
+          <div
+            class="bg-white p-8 rounded-[2.5rem] border-2 border-blue-50 shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 group flex flex-col h-full"
+          >
+            <div
+              class="w-14 h-14 bg-blue-50 text-blue-800 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-800 group-hover:text-white transition-colors"
+            >
+              <i class="fas fa-project-diagram text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3 text-slate-800">
+              Siklus 2: PjBL & Kolaborasi
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+              Menyiasati kelas besar (34 murid) melalui Proyek
+              <em>Mind Mapping</em> tentang Sishankamrata. Murid dibagi menjadi
+              3 peran spesifik: TNI, POLRI, dan Rakyat.
+            </p>
+            <button
+              onclick="showTab('siklus2')"
+              class="text-blue-800 font-bold hover:text-blue-600 text-sm uppercase tracking-wider flex items-center gap-2 mt-auto"
+            >
+              Pelajari Siklus 2 <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+          <!-- Card Siklus 3 -->
+          <div
+            class="bg-white p-8 rounded-[2.5rem] border-2 border-amber-50 shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 group flex flex-col h-full"
+          >
+            <div
+              class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors"
+            >
+              <i class="fas fa-walking text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3 text-slate-800">
+              Siklus 3: Aksi & Refleksi
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+              Pelaksanaan presentasi interaktif menggunakan metode
+              <em>Gallery Walk</em> dan penulisan jurnal refleksi aksi nyata
+              bela negara menggunakan <em>Sticky Notes</em>.
+            </p>
+            <button
+              onclick="showTab('siklus3')"
+              class="text-amber-600 font-bold hover:text-amber-500 text-sm uppercase tracking-wider flex items-center gap-2 mt-auto"
+            >
+              Pelajari Siklus 3 <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dokumentasi Aktivitas Pembelajaran -->
+        <div
+          class="bg-white p-8 md:p-10 rounded-[2.5rem] border border-slate-100 shadow-sm mt-12"
+        >
+          <div class="flex items-center gap-4 mb-8">
+            <div class="h-1 w-12 bg-red-800 rounded-full"></div>
+            <h3 class="text-2xl font-bold text-gray-900">
+              Aktivitas Pembelajaran
+            </h3>
+          </div>
+
+          <!-- Teks Memanjang Penuh (Tidak terbelah kiri-kanan) -->
+          <div class="mb-10 w-full">
+            <p
+              class="w-full max-w-full text-slate-600 leading-8 mb-6 text-justify"
+            >
+              Dokumentasi berikut menunjukkan implementasi dari filosofi dan
+              pendekatan mengajar saya di SMAN 1 Badegan. Saya merancang
+              pembelajaran yang berpusat pada murid melalui diskusi interaktif,
+              presentasi kelompok, dan penggunaan media inovatif untuk membangun
+              pemahaman konsep Pendidikan Pancasila secara kontekstual.
+            </p>
+            <div
+              class="bg-red-50/50 p-6 rounded-2xl border border-red-100 inline-block"
+            >
+              <p class="text-sm font-medium text-red-900 leading-relaxed">
+                <i class="fas fa-quote-left mr-2 text-red-400"></i> Guru yang
+                baik adalah fasilitator yang mampu memberi ruang bagi murid
+                untuk mengeksplorasi potensi terbaiknya dalam suasana kelas yang
+                inklusif dan menyenangkan.
+              </p>
+            </div>
+          </div>
+
+          <!-- Grid 3 Foto Modern (Koreksi Ukuran agar Sejajar Sempurna) -->
+          <div
+            class="relative grid grid-cols-1 md:grid-cols-3 gap-4 overflow-hidden h-[300px] md:h-[400px]"
+          >
+            <!-- Foto Utama Kiri (Besar) -->
+            <div
+              class="md:col-span-2 h-full w-full rounded-3xl overflow-hidden shadow-sm border-2 border-white group relative"
+            >
+              <img
+                src="image_f09c78.png"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=800&auto=format&fit=crop'
+                "
+                alt="Aktivitas Kelas Besar"
+                class="w-full h-full object-cover transition duration-700 group-hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"
+              ></div>
+              <span
+                class="absolute bottom-6 left-6 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition duration-300"
+                >Aktivitas Diskusi Kelas</span
+              >
+            </div>
+            <!-- 2 Foto Kanan (Ditumpuk dengan Grid agar presisi) -->
+            <div
+              class="hidden md:grid grid-rows-2 gap-4 h-full w-full overflow-hidden"
+            >
+              <div
+                class="w-full h-full rounded-3xl overflow-hidden shadow-sm border-2 border-white group relative"
+              >
+                <img
+                  src="image_6750d4.jpg"
+                  onerror="
+                    this.src =
+                      'https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=800&auto=format&fit=crop'
+                  "
+                  alt="Aktivitas Kelompok"
+                  class="w-full h-full object-cover transition duration-700 group-hover:scale-105"
+                />
+              </div>
+              <div
+                class="w-full h-full rounded-3xl overflow-hidden shadow-sm border-2 border-white group relative"
+              >
+                <img
+                  src="image_674c77.png"
+                  onerror="
+                    this.src =
+                      'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop'
+                  "
+                  alt="Presentasi"
+                  class="w-full h-full object-cover transition duration-700 group-hover:scale-105"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-
 
     <!-- KONTEN: PROFIL DIRI (DIPERBARUI SESUAI RUBRIK) -->
     <main id="profile" class="tab-content">
-        <section class="py-12 px-6 max-w-7xl mx-auto">
-            
-            <!-- Header Profil -->
-            <div class="profile-gradient rounded-[3rem] overflow-hidden shadow-2xl text-white mb-12">
-                <div class="grid lg:grid-cols-5">
-                    <div class="lg:col-span-2 relative h-[500px] lg:h-auto">
-                        <img src="images/diri.jpg" alt="Foto Profil Guru" class="w-full h-full object-cover">
-                        <!-- Badge melayang di atas foto -->
-                        <div class="absolute bottom-6 left-6 bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-lg">
-                            <p class="font-extrabold text-sm text-black">Guru Pendidikan Pancasila</p>
-                        </div>
-                    </div>
-                    <div class="lg:col-span-3 p-10 md:p-16 flex flex-col justify-center">
-                        <h2 class="text-4xl md:text-5xl font-extrabold mb-4"><strong>Ummul Karima</strong>, S.Pd.</h2>
-                        <p class="text-red-400 font-bold uppercase tracking-widest text-sm mb-6">Mahasiswa PPG Prajabatan - Gelombang 1</p>
-                        
-                        <div class="space-y-4">
-                            <p class="text-slate-200 leading-relaxed text-base text-justify">
-                               Perkenalkan, saya <strong>Ummul Karima</strong>, mahasiswa Program Pendidikan Profesi Guru (PPG) di Universitas Muhammadiyah Ponorogo. Saya menempuh pendidikan S1 Pendidikan Pancasila dan Kewarganegaraan di Universitas PGRI Wiranegara Kota Pasuruan. 
-                            </p>
-                            <p class="text-slate-200 leading-relaxed text-base text-justify">
-                               Berakar dari budaya religius dan kebersamaan di kampung halaman saya, Kecamatan Wonorejo, Kabupaten Pasuruan, saya percaya bahwa pendidikan adalah jembatan untuk membangun karakter kebangsaan. Bagi saya, mengajar Pendidikan Pancasila bukan sekadar transfer ilmu kenegaraan, melainkan proses menanamkan nilai-nilai demokrasi, toleransi, dan cinta tanah air kepada generasi muda.
-                            </p>
-                            <div class="flex flex-wrap gap-4 mt-6">
-                                <div class="bg-white/10 px-4 py-2 rounded-xl text-sm border border-white/20"><i class="fas fa-envelope mr-2 text-red-300"></i> ummulkarima.258@gmail.com</div>
-                                <div class="bg-white/10 px-4 py-2 rounded-xl text-sm border border-white/20"><i class="fas fa-location-dot mr-2 text-red-300"></i> SMAN 1 Badegan, Ponorogo</div>
-                            </div>
-                        </div>
-                    </div>
+      <section class="py-12 px-6 max-w-7xl mx-auto">
+        <!-- Header Profil -->
+        <div
+          class="profile-gradient rounded-[3rem] overflow-hidden shadow-2xl text-white mb-12"
+        >
+          <div class="grid lg:grid-cols-5">
+            <div class="lg:col-span-2 relative h-[500px] lg:h-auto">
+              <img
+                src="images/diri.jpg"
+                alt="Foto Profil Guru"
+                class="w-full h-full object-cover"
+              />
+              <!-- Badge melayang di atas foto -->
+              <div
+                class="absolute bottom-6 left-6 bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-lg"
+              >
+                <p class="font-extrabold text-sm text-black">
+                  Guru Pendidikan Pancasila
+                </p>
+              </div>
+            </div>
+            <div
+              class="lg:col-span-3 p-10 md:p-16 flex flex-col justify-center"
+            >
+              <h2 class="text-4xl md:text-5xl font-extrabold mb-4">
+                <strong>Ummul Karima</strong>, S.Pd.
+              </h2>
+              <p
+                class="text-red-400 font-bold uppercase tracking-widest text-sm mb-6"
+              >
+                Mahasiswa PPG Prajabatan - Gelombang 1
+              </p>
+
+              <div class="space-y-4">
+                <p
+                  class="text-slate-200 leading-relaxed text-base text-justify"
+                >
+                  Perkenalkan, saya <strong>Ummul Karima</strong>, mahasiswa
+                  Program Pendidikan Profesi Guru (PPG) di Universitas
+                  Muhammadiyah Ponorogo. Saya menempuh pendidikan S1 Pendidikan
+                  Pancasila dan Kewarganegaraan di Universitas PGRI Wiranegara
+                  Kota Pasuruan.
+                </p>
+                <p
+                  class="text-slate-200 leading-relaxed text-base text-justify"
+                >
+                  Berakar dari budaya religius dan kebersamaan di kampung
+                  halaman saya, Kecamatan Wonorejo, Kabupaten Pasuruan, saya
+                  percaya bahwa pendidikan adalah jembatan untuk membangun
+                  karakter kebangsaan. Bagi saya, mengajar Pendidikan Pancasila
+                  bukan sekadar transfer ilmu kenegaraan, melainkan proses
+                  menanamkan nilai-nilai demokrasi, toleransi, dan cinta tanah
+                  air kepada generasi muda.
+                </p>
+                <div class="flex flex-wrap gap-4 mt-6">
+                  <div
+                    class="bg-white/10 px-4 py-2 rounded-xl text-sm border border-white/20"
+                  >
+                    <i class="fas fa-envelope mr-2 text-red-300"></i>
+                    ummulkarima.258@gmail.com
+                  </div>
+                  <div
+                    class="bg-white/10 px-4 py-2 rounded-xl text-sm border border-white/20"
+                  >
+                    <i class="fas fa-location-dot mr-2 text-red-300"></i> SMAN 1
+                    Badegan, Ponorogo
+                  </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- KEKAYAAN DAERAH KABUPATEN PASURUAN -->
+        <div class="mb-16">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="h-1 w-12 bg-red-800 rounded-full"></div>
+            <h2 class="text-3xl font-bold text-gray-900">
+              Pesona Kabupaten Pasuruan
+            </h2>
+          </div>
+          <p
+            class="text-slate-600 leading-relaxed mb-10 w-full max-w-none md:pr-2 lg:pr-0 text-justify"
+          >
+            Lahir dan besar di Kabupaten Pasuruan, saya merasa bersyukur
+            dikelilingi oleh daerah yang kaya akan pesona alam, sejarah, dan
+            kebudayaan. Keberagaman dan keindahan daerah inilah yang senantiasa
+            menjadi sumber inspirasi saya dalam merawat kebhinekaan serta
+            mengajarkan rasa bangga dan cinta tanah air kepada murid.
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <div
+              class="bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group flex flex-col"
+            >
+              <div class="h-56 overflow-hidden relative">
+                <!-- Foto Gunung Bromo -->
+                <img
+                  src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?q=80&w=800&auto=format&fit=crop"
+                  class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                  alt="Gunung Bromo"
+                />
+                <div class="absolute top-4 left-4">
+                  <span
+                    class="bg-white/90 backdrop-blur-sm text-red-800 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest shadow-sm"
+                    >Wisata Alam</span
+                  >
+                </div>
+              </div>
+              <div class="p-6 flex flex-col flex-grow">
+                <h3
+                  class="text-xl font-bold text-slate-800 mb-2 group-hover:text-red-800 transition-colors"
+                >
+                  Taman Nasional Bromo
+                </h3>
+                <div
+                  class="flex items-center gap-2 text-xs text-slate-500 mb-4"
+                >
+                  <i class="fas fa-map-marker-alt text-red-500"></i> Tosari,
+                  Pasuruan
+                </div>
+                <p
+                  class="text-sm text-slate-600 leading-relaxed mb-6 flex-grow"
+                >
+                  Keindahan bentang alam pegunungan dan lautan pasir yang
+                  ikonik. Mengajarkan kita akan keagungan ciptaan Tuhan dan
+                  pentingnya menjaga kelestarian alam.
+                </p>
+                <div class="mt-auto flex justify-end">
+                  <!-- Tombol Panah Diubah Menjadi Link (Klik) -->
+                  <a
+                    href="https://bromotenggersemeru.id/"
+                    target="_blank"
+                    class="w-10 h-10 rounded-full bg-red-50 text-red-800 flex items-center justify-center group-hover:bg-red-800 group-hover:text-white transition-colors shadow-sm"
+                    title="Kunjungi Web Resmi Pasuruan"
+                  >
+                    <i class="fas fa-arrow-right text-sm"></i>
+                  </a>
+                </div>
+              </div>
             </div>
 
-            <!-- GRID BARU: VISI, MISI, FILOSOFI, KARAKTER -->
-            <div class="mb-16">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="h-1 w-12 bg-red-800 rounded-full"></div>
-                    <h2 class="text-3xl font-bold text-gray-900">Visi & Karakter Guru</h2>
+            <!-- Card 2 -->
+            <div
+              class="bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group flex flex-col"
+            >
+              <div class="h-56 overflow-hidden relative">
+                <!-- Foto Taman Safari / Alam Satwa -->
+                <img
+                  src="https://images.unsplash.com/photo-1534567153574-2b12153a87f0?q=80&w=800&auto=format&fit=crop"
+                  class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                  alt="Taman Safari Prigen"
+                />
+                <div class="absolute top-4 left-4">
+                  <span
+                    class="bg-white/90 backdrop-blur-sm text-emerald-800 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest shadow-sm"
+                    >Edukasi & Konservasi</span
+                  >
                 </div>
-                
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Filosofi & Visi -->
-                    <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-md transition duration-300">
-                        <div class="w-12 h-12 bg-red-50 text-red-800 rounded-xl flex items-center justify-center mb-6">
-                            <i class="fas fa-seedling text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-800 mb-4">Filosofi Mengajar</h3>
-                        <p class="text-slate-600 leading-relaxed italic border-l-4 border-red-800 pl-4 mb-6">
-                            "Pendidikan bukan sekadar mengisi wadah yang kosong, melainkan menyalakan api kesadaran."
-                        </p>
-                        <h4 class="font-bold text-slate-800 mb-2">Visi Profesional:</h4>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                            Menjadi guru profesional yang kreatif, inovatif, dan inspiratif dalam menciptakan ruang belajar yang demokratis. Saya berdedikasi untuk membentuk murid yang memiliki daya kritis luhur dan menginternalisasi nilai-nilai Profil Pelajar Pancasila dalam tindakan nyata.
-                        </p>
-                        <h4 class="font-bold text-slate-800 mb-2">Misi:</h4>
-                        <ul class="text-slate-600 text-sm leading-relaxed list-disc list-inside space-y-1">
-                            <li>Mengembangkan pembelajaran yang berdiferensiasi dan berpusat pada murid.</li>
-                            <li>Mengintegrasikan teknologi secara bermakna dalam kelas.</li>
-                            <li>Menjadi fasilitator yang menjembatani keberagaman karakteristik murid.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Karakter & Kompetensi -->
-                    <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 bg-blue-50 text-blue-800 rounded-xl flex items-center justify-center mb-6">
-                                <i class="fas fa-heart text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-800 mb-4">Nilai & Karakteristik</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-6 text-justify">
-                                Sebagai seorang pendidik, saya memegang teguh karakter <strong>reflektif</strong> dan <strong>pembelajar sepanjang hayat</strong>. Melalui program PPG ini, saya secara sadar terus mengasah kompetensi pedagogik, kepribadian, sosial, dan profesional saya agar relevan dengan kebutuhan murid Gen Z.
-                            </p>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-bold text-slate-800 mb-3 text-sm">Kompetensi Utama:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-red-50 text-red-700 px-3 py-1.5 rounded-lg text-xs font-bold border border-red-100">Pedagogi Kritis</span>
-                                <span class="bg-blue-50 text-blue-700 px-3 py-1.5 rounded-lg text-xs font-bold border border-blue-100">Project-Based Learning</span>
-                                <span class="bg-amber-50 text-amber-700 px-3 py-1.5 rounded-lg text-xs font-bold border border-amber-100">Komunikasi Empatik</span>
-                                <span class="bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-lg text-xs font-bold border border-emerald-100">Desain Media Interaktif</span>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+              <div class="p-6 flex flex-col flex-grow">
+                <h3
+                  class="text-xl font-bold text-slate-800 mb-2 group-hover:text-emerald-800 transition-colors"
+                >
+                  Taman Safari Prigen
+                </h3>
+                <div
+                  class="flex items-center gap-2 text-xs text-slate-500 mb-4"
+                >
+                  <i class="fas fa-map-marker-alt text-emerald-500"></i> Prigen,
+                  Pasuruan
                 </div>
+                <p
+                  class="text-sm text-slate-600 leading-relaxed mb-6 flex-grow"
+                >
+                  Pusat konservasi satwa dan rekreasi edukatif yang asri.
+                  Menanamkan kesadaran tentang keseimbangan ekosistem dan
+                  kepedulian terhadap keanekaragaman hayati.
+                </p>
+                <div class="mt-auto flex justify-end">
+                  <!-- Tombol Panah Diubah Menjadi Link (Klik) -->
+                  <a
+                    href="https://tamansafari.com/taman-safari-prigen/"
+                    target="_blank"
+                    class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-800 flex items-center justify-center group-hover:bg-emerald-800 group-hover:text-white transition-colors shadow-sm"
+                    title="Kunjungi Website Safari Prigen"
+                  >
+                    <i class="fas fa-arrow-right text-sm"></i>
+                  </a>
+                </div>
+              </div>
             </div>
 
-            <!-- Detail Latar Belakang (Pendidikan, Pengalaman) -->
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <!-- Pendidikan -->
-                <div class="info-card">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-10 h-10 bg-slate-100 text-slate-600 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-800">Riwayat Pendidikan</h3>
-                    </div>
-                    <ul class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent">
-                        <li class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-red-800 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 relative z-10">
-                                <i class="fas fa-chalkboard-teacher text-xs"></i>
-                            </div>
-                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                                <p class="text-sm font-bold text-slate-800">Pendidikan Profesi Guru (PPG)</p>
-                                <p class="text-xs text-red-600 font-semibold mb-1">Universitas Muhammadiyah Ponorogo</p>
-                                <p class="text-[10px] text-slate-400">2026 - Sekarang</p>
-                            </div>
-                        </li>
-                        <li class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-200 text-slate-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 relative z-10">
-                                <i class="fas fa-university text-xs"></i>
-                            </div>
-                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                                <p class="text-sm font-bold text-slate-800">S1 Pendidikan Pancasila & Kewarganegaraan</p>
-                                <p class="text-xs text-slate-600 font-semibold mb-1">Universitas PGRI Wiranegara, Pasuruan</p>
-                                <p class="text-[10px] text-slate-400">Lulus S1</p>
-                            </div>
-                        </li>
-                    </ul>
+            <!-- Card 3 -->
+            <div
+              class="bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group flex flex-col"
+            >
+              <div class="h-56 overflow-hidden relative">
+                <!-- Foto Candi Jawi / Cagar Budaya diperbarui menggunakan gambar Wikipedia -->
+                <img
+                  src="images/Jawi.JPG"
+                  class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                  alt="Candi Jawi"
+                />
+                <div class="absolute top-4 left-4">
+                  <span
+                    class="bg-white/90 backdrop-blur-sm text-amber-800 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest shadow-sm"
+                    >Sejarah & Budaya</span
+                  >
                 </div>
-
-                <!-- Pengalaman Praktik -->
-                <div class="info-card">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-10 h-10 bg-slate-100 text-slate-600 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-800">Pengalaman Praktik (PPL)</h3>
-                    </div>
-                    <div class="bg-blue-50/50 p-5 rounded-2xl border border-blue-100 mb-4">
-                        <h4 class="font-bold text-blue-900 text-sm mb-1">PPL Terbimbing - SMAN 1 Badegan</h4>
-                        <p class="text-xs text-blue-700 font-medium mb-3">Fase E (Kelas X) | Semester Genap</p>
-                        <p class="text-sm text-slate-600 leading-relaxed">Melaksanakan praktik mengajar selama 3 siklus secara terbimbing. Fokus utama pada penerapan model pembelajaran inovatif untuk mengatasi pasivitas murid dan memfasilitasi kebutuhan belajar yang beragam.</p>
-                    </div>
-                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
-                        <h4 class="font-bold text-slate-800 text-sm mb-1">Observasi Karakter Peserta Didik</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed">Melakukan asesmen diagnostik awal untuk memetakan gaya belajar, minat, dan kesiapan belajar murid sebagai dasar perancangan modul ajar berdiferensiasi.</p>
-                    </div>
+              </div>
+              <div class="p-6 flex flex-col flex-grow">
+                <h3
+                  class="text-xl font-bold text-slate-800 mb-2 group-hover:text-amber-800 transition-colors"
+                >
+                  Candi Jawi
+                </h3>
+                <div
+                  class="flex items-center gap-2 text-xs text-slate-500 mb-4"
+                >
+                  <i class="fas fa-map-marker-alt text-amber-500"></i> Prigen,
+                  Pasuruan
                 </div>
-            </div> <!-- Ini adalah penutup grid Latar Belakang yang sebelumnya terlewat -->
-
-            <!-- Dokumentasi Aktivitas Pembelajaran -->
-            <div class="bg-white p-8 md:p-10 rounded-[2.5rem] border border-slate-100 shadow-sm mt-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="h-1 w-12 bg-red-800 rounded-full"></div>
-                    <h3 class="text-2xl font-bold text-gray-900">Aktivitas Pembelajaran</h3>
+                <p
+                  class="text-sm text-slate-600 leading-relaxed mb-6 flex-grow"
+                >
+                  Situs cagar budaya peninggalan Kerajaan Singhasari. Sebuah
+                  simbol keagungan sejarah Nusantara yang menjadi bukti nyata
+                  tingginya peradaban nenek moyang kita.
+                </p>
+                <div class="mt-auto flex justify-end">
+                  <!-- Tombol Panah Diubah Menjadi Link (Klik) ke Wikipedia -->
+                  <a
+                    href="https://id.wikipedia.org/wiki/Candi_Jawi"
+                    target="_blank"
+                    class="w-10 h-10 rounded-full bg-amber-50 text-amber-800 flex items-center justify-center group-hover:bg-amber-800 group-hover:text-white transition-colors shadow-sm"
+                    title="Baca Info Candi Jawi"
+                  >
+                    <i class="fas fa-arrow-right text-sm"></i>
+                  </a>
                 </div>
-                
-                <!-- Teks Memanjang Penuh (Tidak terbelah kiri-kanan) -->
-                <div class="mb-10 w-full">
-                    <p class="w-full max-w-full text-slate-600 leading-8 mb-6 text-justify">
-                        Dokumentasi berikut menunjukkan implementasi dari filosofi dan pendekatan mengajar saya di SMAN 1 Badegan. Saya merancang pembelajaran yang berpusat pada murid melalui diskusi interaktif, presentasi kelompok, dan penggunaan media inovatif untuk membangun pemahaman konsep Pendidikan Pancasila secara kontekstual.
-                    </p>
-                    <div class="bg-red-50/50 p-6 rounded-2xl border border-red-100 inline-block">
-                        <p class="text-sm font-medium text-red-900 leading-relaxed">
-                            <i class="fas fa-quote-left mr-2 text-red-400"></i> Guru yang baik adalah fasilitator yang mampu memberi ruang bagi murid untuk mengeksplorasi potensi terbaiknya dalam suasana kelas yang inklusif dan menyenangkan.
-                        </p>
-                    </div>
-                </div>
-                
-               <!-- Grid 3 Foto Modern (Koreksi Ukuran agar Sejajar Sempurna) -->
-                <div class="relative grid grid-cols-1 md:grid-cols-3 gap-4 overflow-hidden h-[300px] md:h-[400px]">
-                    <!-- Foto Utama Kiri (Besar) -->
-                    <div class="md:col-span-2 h-full w-full rounded-3xl overflow-hidden shadow-sm border-2 border-white group relative">
-                        <img src="image_f09c78.png" onerror="this.src='https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=800&auto=format&fit=crop'" alt="Aktivitas Kelas Besar" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
-                        <span class="absolute bottom-6 left-6 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition duration-300">Aktivitas Diskusi Kelas</span>
-                    </div>
-                    <!-- 2 Foto Kanan (Ditumpuk dengan Grid agar presisi) -->
-                    <div class="hidden md:grid grid-rows-2 gap-4 h-full w-full overflow-hidden">
-                        <div class="w-full h-full rounded-3xl overflow-hidden shadow-sm border-2 border-white group relative">
-                            <img src="image_6750d4.jpg" onerror="this.src='https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=800&auto=format&fit=crop'" alt="Aktivitas Kelompok" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
-                        </div>
-                        <div class="w-full h-full rounded-3xl overflow-hidden shadow-sm border-2 border-white group relative">
-                            <img src="image_674c77.png" onerror="this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop'" alt="Presentasi" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-            
-        </section>
+          </div>
+        </div>
+
+        <!-- GRID BARU: VISI, MISI, FILOSOFI, KARAKTER -->
+        <div class="mb-16">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="h-1 w-12 bg-red-800 rounded-full"></div>
+            <h2 class="text-3xl font-bold text-gray-900">
+              Visi & Karakter Guru
+            </h2>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Filosofi & Visi -->
+            <div
+              class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-md transition duration-300"
+            >
+              <div
+                class="w-12 h-12 bg-red-50 text-red-800 rounded-xl flex items-center justify-center mb-6"
+              >
+                <i class="fas fa-seedling text-xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-800 mb-4">
+                Filosofi Mengajar
+              </h3>
+              <p
+                class="text-slate-600 leading-relaxed italic border-l-4 border-red-800 pl-4 mb-6"
+              >
+                "Pendidikan bukan sekadar mengisi wadah yang kosong, melainkan
+                menyalakan api kesadaran."
+              </p>
+              <h4 class="font-bold text-slate-800 mb-2">Visi Profesional:</h4>
+              <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                Menjadi guru profesional yang kreatif, inovatif, dan inspiratif
+                dalam menciptakan ruang belajar yang demokratis. Saya
+                berdedikasi untuk membentuk murid yang memiliki daya kritis
+                luhur dan menginternalisasi nilai-nilai Profil Pelajar Pancasila
+                dalam tindakan nyata.
+              </p>
+              <h4 class="font-bold text-slate-800 mb-2">Misi:</h4>
+              <ul
+                class="text-slate-600 text-sm leading-relaxed list-disc list-inside space-y-1"
+              >
+                <li>
+                  Mengembangkan pembelajaran yang berdiferensiasi dan berpusat
+                  pada murid.
+                </li>
+                <li>Mengintegrasikan teknologi secara bermakna dalam kelas.</li>
+                <li>
+                  Menjadi fasilitator yang menjembatani keberagaman
+                  karakteristik murid.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Karakter & Kompetensi -->
+            <div
+              class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between"
+            >
+              <div>
+                <div
+                  class="w-12 h-12 bg-blue-50 text-blue-800 rounded-xl flex items-center justify-center mb-6"
+                >
+                  <i class="fas fa-heart text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-4">
+                  Nilai & Karakteristik
+                </h3>
+                <p
+                  class="text-slate-600 text-sm leading-relaxed mb-6 text-justify"
+                >
+                  Sebagai seorang pendidik, saya memegang teguh karakter
+                  <strong>reflektif</strong> dan
+                  <strong>pembelajar sepanjang hayat</strong>. Melalui program
+                  PPG ini, saya secara sadar terus mengasah kompetensi
+                  pedagogik, kepribadian, sosial, dan profesional saya agar
+                  relevan dengan kebutuhan murid Gen Z.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-slate-800 mb-3 text-sm">
+                  Kompetensi Utama:
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-red-50 text-red-700 px-3 py-1.5 rounded-lg text-xs font-bold border border-red-100"
+                    >Pedagogi Kritis</span
+                  >
+                  <span
+                    class="bg-blue-50 text-blue-700 px-3 py-1.5 rounded-lg text-xs font-bold border border-blue-100"
+                    >Project-Based Learning</span
+                  >
+                  <span
+                    class="bg-amber-50 text-amber-700 px-3 py-1.5 rounded-lg text-xs font-bold border border-amber-100"
+                    >Komunikasi Empatik</span
+                  >
+                  <span
+                    class="bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-lg text-xs font-bold border border-emerald-100"
+                    >Desain Media Interaktif</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detail Latar Belakang (Pendidikan, Pengalaman) -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <!-- Pendidikan -->
+          <div class="info-card">
+            <div class="flex items-center gap-4 mb-6">
+              <div
+                class="w-10 h-10 bg-slate-100 text-slate-600 rounded-lg flex items-center justify-center"
+              >
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-800">
+                Riwayat Pendidikan
+              </h3>
+            </div>
+            <ul
+              class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent"
+            >
+              <li
+                class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
+              >
+                <div
+                  class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-red-800 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 relative z-10"
+                >
+                  <i class="fas fa-chalkboard-teacher text-xs"></i>
+                </div>
+                <div
+                  class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl border border-slate-100 shadow-sm"
+                >
+                  <p class="text-sm font-bold text-slate-800">
+                    Pendidikan Profesi Guru (PPG)
+                  </p>
+                  <p class="text-xs text-red-600 font-semibold mb-1">
+                    Universitas Muhammadiyah Ponorogo
+                  </p>
+                  <p class="text-[10px] text-slate-400">2026 - Sekarang</p>
+                </div>
+              </li>
+              <li
+                class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
+              >
+                <div
+                  class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-200 text-slate-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 relative z-10"
+                >
+                  <i class="fas fa-university text-xs"></i>
+                </div>
+                <div
+                  class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl border border-slate-100 shadow-sm"
+                >
+                  <p class="text-sm font-bold text-slate-800">
+                    S1 Pendidikan Pancasila & Kewarganegaraan
+                  </p>
+                  <p class="text-xs text-slate-600 font-semibold mb-1">
+                    Universitas PGRI Wiranegara, Pasuruan
+                  </p>
+                  <p class="text-[10px] text-slate-400">Lulus S1</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Pengalaman Praktik -->
+          <div class="info-card">
+            <div class="flex items-center gap-4 mb-6">
+              <div
+                class="w-10 h-10 bg-slate-100 text-slate-600 rounded-lg flex items-center justify-center"
+              >
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-800">
+                Pengalaman Praktik (PPL)
+              </h3>
+            </div>
+            <div
+              class="bg-blue-50/50 p-5 rounded-2xl border border-blue-100 mb-4"
+            >
+              <h4 class="font-bold text-blue-900 text-sm mb-1">
+                PPL Terbimbing - SMAN 1 Badegan
+              </h4>
+              <p class="text-xs text-blue-700 font-medium mb-3">
+                Fase E (Kelas X) | Semester 1
+              </p>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Melaksanakan praktik mengajar selama 3 siklus secara terbimbing.
+                Fokus utama pada penerapan model pembelajaran inovatif untuk
+                mengatasi pasivitas murid dan memfasilitasi kebutuhan belajar
+                yang beragam.
+              </p>
+            </div>
+            <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
+              <h4 class="font-bold text-slate-800 text-sm mb-1">
+                Observasi Karakter Murid & Asesmen Awal
+              </h4>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Melakukan asesmen diagnostik awal untuk memetakan gaya belajar,
+                minat, dan kesiapan belajar murid sebagai dasar perancangan
+                modul ajar berdiferensiasi.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Ini adalah penutup grid Latar Belakang yang sebelumnya terlewat -->
+      </section>
     </main>
 
     <!-- KONTEN: SIKLUS 1 -->
     <main id="siklus1" class="tab-content">
-        <section class="py-12 px-6 max-w-7xl mx-auto">
-            
-            <!-- Header Siklus 1 -->
-            <div class="bg-red-800 rounded-[3rem] overflow-hidden shadow-xl text-white mb-10 relative">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-                <div class="p-10 md:p-16 relative z-10">
-                    <div class="inline-block bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-6 border border-white/30">
-                        Laporan Refleksi Siklus 1
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-extrabold mb-4 font-heading leading-tight">Posisi, Tugas & Tanggung Jawab Warga Negara</h2>
-                    <p class="text-red-200 text-lg max-w-2xl leading-relaxed">
-                        Pendekatan pembelajaran interaktif satu pertemuan menggunakan presentasi Canva visual dan Asesmen Formatif gamifikasi Wordwall.
-                    </p>
-                </div>
+      <section class="py-12 px-6 max-w-7xl mx-auto">
+        <!-- Header Siklus 1 -->
+        <div
+          class="bg-red-800 rounded-[3rem] overflow-hidden shadow-xl text-white mb-10 relative"
+        >
+          <div
+            class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"
+          ></div>
+          <div class="p-10 md:p-16 relative z-10">
+            <div
+              class="inline-block bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-6 border border-white/30"
+            >
+              Laporan Refleksi Siklus 1
             </div>
+            <h2
+              class="text-4xl md:text-5xl font-extrabold mb-4 font-heading leading-tight"
+            >
+              Posisi, Tugas & Tanggung Jawab Warga Negara
+            </h2>
+            <p class="text-red-200 text-lg max-w-2xl leading-relaxed">
+              Pendekatan pembelajaran interaktif satu pertemuan menggunakan
+              presentasi Canva visual dan Asesmen Formatif gamifikasi Wordwall.
+            </p>
+          </div>
+        </div>
 
-            <div class="grid lg:grid-cols-3 gap-10">
-                <!-- Kolom Kiri: Konteks & Analisis (Lebar) -->
-                <div class="lg:col-span-2 space-y-10">
-                    
-                    <!-- Latar Belakang -->
-                    <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="w-10 h-10 bg-slate-100 text-slate-600 rounded-lg flex items-center justify-center"><i class="fas fa-bullseye"></i></div>
-                            <h3 class="text-xl font-bold text-slate-800">Konteks Pembelajaran</h3>
-                        </div>
-                        <p class="text-slate-600 leading-relaxed text-justify mb-4">
-                            Pada Siklus 1, fokus materi adalah pemahaman posisi, tugas, dan tanggung jawab sebagai warga negara. Mengingat alokasi waktu yang sangat terbatas (<strong>hanya 1 kali pertemuan</strong>), saya memutuskan untuk <strong>tidak menggunakan metode proyek (PBL) maupun Lembar Kerja Murid (LKM)</strong> untuk menghindari beban kognitif dan waktu yang berlebih pada murid.
-                        </p>
-                        <p class="text-slate-600 leading-relaxed text-justify">
-                            Sebagai gantinya, saya merancang kelas interaktif yang bertumpu pada visualisasi materi melalui Canva, dan menutup pembelajaran menggunakan media <strong>Wordwall</strong>. Di sini, Wordwall murni difungsikan sebagai <strong>Asesmen Formatif</strong> untuk mengukur ketercapaian pemahaman murid di hari tersebut secara cepat, akurat, dan menyenangkan.
-                        </p>
-                    </div>
-
-                    <!-- KEDALAMAN ANALISIS ARTEFAK (Sesuai Rubrik) -->
-                    <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="w-10 h-10 bg-blue-50 text-blue-700 rounded-lg flex items-center justify-center"><i class="fas fa-microscope"></i></div>
-                            <h3 class="text-xl font-bold text-slate-800">Analisis Artefak: Asesmen Formatif Wordwall</h3>
-                        </div>
-                        
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
-                                <h4 class="font-bold text-slate-800 mb-2 flex items-center gap-2"><i class="fas fa-check-circle text-emerald-600"></i> Keunggulan</h4>
-                                <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside">
-                                    <li>Sangat efisien untuk asesmen formatif dalam 1 pertemuan singkat.</li>
-                                    <li>Menghilangkan ketegangan kuis tulis; murid dievaluasi tanpa merasa "sedang ujian".</li>
-                                    <li>Umpan balik seketika (*instant feedback*) membantu guru mengevaluasi ketuntasan materi hari itu juga.</li>
-                                </ul>
-                            </div>
-                            <div class="bg-red-50/50 p-5 rounded-2xl border border-red-100">
-                                <h4 class="font-bold text-slate-800 mb-2 flex items-center gap-2"><i class="fas fa-exclamation-triangle text-red-600"></i> Tantangan/Kelemahan</h4>
-                                <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside">
-                                    <li>Bergantung penuh pada stabilitas koneksi internet dan gawai murid di jam akhir pelajaran.</li>
-                                    <li>Terkadang fokus murid bergeser dari menjawab benar menjadi sekadar "menjawab cepat" demi poin (*leaderboard*).</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+        <!-- GRID ATAS: Konteks vs Studi Kasus -->
+        <div class="grid lg:grid-cols-12 gap-8 mb-10">
+          <!-- Kolom Kiri: Konteks & Tujuan (Lebih Lebar) -->
+          <div class="lg:col-span-7">
+            <div
+              class="bg-white rounded-3xl shadow-sm border border-slate-200 p-8 h-full"
+            >
+              <div class="flex items-center gap-3 mb-6">
+                <!-- Target icon with red background and glow -->
+                <div
+                  class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center shadow-[0_0_15px_rgba(220,38,38,0.5)]"
+                >
+                  <i class="fas fa-bullseye text-white text-xl"></i>
                 </div>
+                <h3 class="text-2xl font-bold text-slate-800 font-heading">
+                  Konteks Pembelajaran
+                </h3>
+              </div>
 
-                <!-- Kolom Kanan: Visual & Info -->
-                <div class="space-y-6">
-                    <div class="bg-slate-900 rounded-[2rem] p-6 text-white shadow-lg relative overflow-hidden group">
-                        <!-- Placeholder gambar Wordwall -->
-                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-20 transition duration-500" alt="Wordwall Game">
-                        <div class="relative z-10">
-                            <span class="bg-red-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4 inline-block">Artefak Produk</span>
-                            <h4 class="text-xl font-bold mb-2">Wordwall Asesmen</h4>
-                            <p class="text-slate-300 text-sm mb-6">Instrumen asesmen formatif digital tentang hak, kewajiban, dan tanggung jawab warga negara.</p>
-                            <button onclick="showTab('artefak')" class="w-full py-3 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-xl text-sm font-bold transition flex items-center justify-center gap-2">
-                                <i class="fas fa-external-link-alt"></i> Lihat Bukti Artefak
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded-[2rem] border border-slate-100 shadow-sm">
-                        <h4 class="font-bold text-slate-800 mb-4 border-b border-slate-100 pb-2">Informasi Siklus</h4>
-                        <div class="space-y-3 text-sm">
-                            <div class="flex justify-between"><span class="text-slate-500">Pertemuan</span> <span class="font-semibold text-slate-800">1 Kali Pertemuan</span></div>
-                            <div class="flex justify-between"><span class="text-slate-500">Asesmen</span> <span class="font-semibold text-slate-800">Formatif (Non-Proyek)</span></div>
-                            <div class="flex justify-between"><span class="text-slate-500">Media</span> <span class="font-semibold text-slate-800">Canva & Wordwall</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+              <p class="text-slate-600 leading-relaxed text-justify mb-4">
+                Pada Siklus 1, pembelajaran Pendidikan Pancasila difokuskan pada
+                materi
+                <strong
+                  >Posisi, Tugas, dan Tanggung Jawab sebagai Warga
+                  Negara</strong
+                >. Pembelajaran dirancang menggunakan pendekatan
+                <strong>Problem-Based Learning (PBL)</strong> dengan
+                menghadirkan studi kasus nyata berupa video vandalisme atau
+                perusakan fasilitas umum sebagai pemantik diskusi dan analisis
+                murid.
+              </p>
 
-            <!-- MEDIA PRESENTASI CANVA TAMPIL LANGSUNG -->
-            <div class="mt-10 bg-gradient-to-r from-blue-50 to-white p-6 md:p-10 rounded-[2.5rem] border border-blue-100 shadow-sm">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center shrink-0 shadow-md border border-blue-200">
-                            <i class="fas fa-desktop text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-slate-800 text-lg md:text-xl">Media Presentasi (Canva)</h3>
-                            <p class="text-xs text-slate-500">PPT Posisi, Tugas & Tanggung Jawab Warga Negara</p>
-                        </div>
-                    </div>
-                    <a href="https://www.canva.com/design/DAHIBLoiklY/1xbM_nxhMIFhntdubzfpYw/view" target="_blank" class="w-full sm:w-auto px-5 py-2.5 bg-blue-600 text-white hover:bg-blue-700 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 shrink-0 shadow-md">
-                        <i class="fas fa-external-link-alt text-sm"></i> Buka Layar Penuh
-                    </a>
-                </div>
-                
-                <!-- Kotak iFrame Canva -->
-                <div class="w-full aspect-video md:aspect-[16/9] rounded-2xl overflow-hidden border-2 border-slate-200 bg-slate-50 relative shadow-inner">
-                    <!-- Loading Text -->
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-400">
-                        <i class="fas fa-circle-notch fa-spin text-4xl mb-4 text-blue-300"></i>
-                        <p class="text-sm font-medium">Memuat Presentasi Canva...</p>
-                    </div>
-                    
-                    <!-- iFrame Embed Canva: Pautan telah disematkan dengan ciri '?embed' -->
-                    <iframe class="relative z-10 w-full h-full bg-white" src="https://www.canva.com/design/DAHIBLoiklY/1xbM_nxhMIFhntdubzfpYw/view?embed" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                </div>
+              <p class="text-slate-600 leading-relaxed text-justify mb-4">
+                Melalui tayangan video kasus vandalisme fasilitas umum, murid
+                diajak untuk menganalisis bentuk pelanggaran tanggung jawab
+                warga negara, menghubungkan kasus dengan pasal-pasal dalam UUD
+                NRI Tahun 1945, serta merumuskan solusi pencegahan yang dapat
+                diterapkan dalam kehidupan sehari-hari. Pembelajaran dilakukan
+                secara kolaboratif melalui diskusi kelompok, presentasi
+                interaktif, dan tanya jawab kritis.
+              </p>
 
-                <p class="text-[10px] md:text-xs text-slate-500 mt-4 flex items-center justify-center gap-2">
-                    <i class="fas fa-info-circle text-blue-600"></i> 
-                    Presentasi ditampilkan menggunakan format Tautan Sematan Canva.
+              <p class="text-slate-600 leading-relaxed text-justify mb-8">
+                Untuk menciptakan suasana belajar yang interaktif dan
+                menyenangkan, guru memanfaatkan media digital seperti
+                <strong>Wordwall</strong> sebagai asesmen formatif, ice
+                breaking, dan media presentasi interaktif. Pembelajaran ini
+                diharapkan mampu menumbuhkan sikap nasionalisme, kepatuhan
+                hukum, gotong royong, komunikasi, serta kemampuan bernalar
+                kritis pada murid.
+              </p>
+
+              <!-- Box Tujuan Pembelajaran -->
+              <div class="p-6 rounded-2xl bg-red-50/50 border border-red-100">
+                <div class="flex items-center gap-2 mb-3">
+                  <i class="fas fa-flag-checkered text-red-700 text-lg"></i>
+                  <h4 class="text-lg font-bold text-red-900">
+                    Tujuan Pembelajaran
+                  </h4>
+                </div>
+                <p class="text-slate-700 text-sm leading-relaxed text-justify">
+                  Murid mampu menganalisis posisi, tugas, dan tanggung jawab
+                  sebagai warga negara sesuai UUD NRI Tahun 1945 melalui diskusi
+                  kelompok berbasis pemecahan masalah dari studi kasus
+                  vandalisme fasilitas umum secara kritis, kolaboratif, dan
+                  bertanggung jawab.
                 </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kolom Kanan: Video Studi Kasus & Info Siklus -->
+          <div class="lg:col-span-5 space-y-6">
+            <!-- Box Video (Youtube Thumbnail yg mengarah ke link asli) -->
+            <div
+              class="bg-slate-900 rounded-3xl shadow-lg border border-slate-800 overflow-hidden"
+            >
+              <div
+                class="p-5 border-b border-slate-800 flex items-center gap-3"
+              >
+                <i class="fab fa-youtube text-red-500 text-lg"></i>
+                <h3 class="text-white font-bold text-sm">
+                  Studi Kasus: Vandalisme Halte
+                </h3>
+              </div>
+              <div class="p-5">
+                <!-- Thumbnail Video (Klik langsung menuju YouTube) -->
+                <a
+                  href="https://www.youtube.com/watch?v=GAdcgzXosB8"
+                  target="_blank"
+                  class="block relative w-full aspect-video rounded-xl overflow-hidden bg-slate-800 group border border-slate-700 shadow-inner cursor-pointer"
+                >
+                  <!-- Mengambil thumbnail asli dari YouTube -->
+                  <img
+                    src="https://img.youtube.com/vi/GAdcgzXosB8/hqdefault.jpg"
+                    onerror="
+                      this.src =
+                        'https://images.unsplash.com/photo-1541680670548-261bd117ebbc?q=80&w=800&auto=format&fit=crop'
+                    "
+                    class="w-full h-full object-cover opacity-50 group-hover:opacity-80 transition duration-500"
+                    alt="Vandalisme Halte"
+                  />
+                  <div
+                    class="absolute inset-0 flex items-center justify-center"
+                  >
+                    <div
+                      class="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center text-white shadow-[0_0_15px_rgba(220,38,38,0.8)] group-hover:scale-110 transition duration-300"
+                    >
+                      <i class="fas fa-play ml-1 text-xl"></i>
+                    </div>
+                  </div>
+                </a>
+                <!-- Teks Judul Video & Link Real YouTube -->
+                <div class="mt-4">
+                  <p
+                    class="text-xs text-slate-300 font-medium mb-3 leading-relaxed"
+                  >
+                    Dua Pemuda Tertangkap Kamera Lakukan Aksi Corat-coret Halte
+                    | Liputan 6
+                  </p>
+                  <a
+                    href="https://www.youtube.com/watch?v=GAdcgzXosB8"
+                    target="_blank"
+                    class="flex items-center justify-center gap-2 bg-slate-800 p-2.5 rounded-lg text-blue-400 hover:bg-slate-700 hover:text-blue-300 text-xs font-bold overflow-hidden transition border border-slate-700"
+                  >
+                    <i class="fas fa-external-link-alt"></i>
+                    <span class="truncate uppercase tracking-wider"
+                      >Tonton di YouTube</span
+                    >
+                  </a>
+                </div>
+              </div>
             </div>
 
-            <!-- EMBED DOKUMEN RPM TAMPIL LANGSUNG DI SINI -->
-            <div class="mt-10 bg-white p-6 md:p-10 rounded-[2.5rem] border border-slate-100 shadow-sm">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-red-50 text-red-800 rounded-xl flex items-center justify-center shrink-0 border border-red-100">
-                            <i class="fas fa-file-pdf text-2xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-slate-800 text-lg md:text-xl">Dokumen RPM - Siklus 1</h3>
-                            <p class="text-xs text-slate-500">Rancangan Pembelajaran Mendalam / Modul Ajar</p>
-                        </div>
-                    </div>
-                    <!-- Tautan ini diupdate ke file PDF Anda -->
-                    <a href="https://drive.google.com/file/d/14QnkTcwolKcaG5yiOSLZK2Wnc5hM81CL/view?usp=sharing" target="_blank" class="w-full sm:w-auto px-5 py-2.5 bg-red-800 text-white hover:bg-red-900 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 shrink-0 shadow-md">
-                        <i class="fas fa-download text-sm"></i> Unduh Dokumen
-                    </a>
+            <!-- Box Informasi Siklus -->
+            <div
+              class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm"
+            >
+              <div
+                class="flex items-center gap-3 mb-5 border-b border-slate-100 pb-3"
+              >
+                <i class="fas fa-info-circle text-blue-600 text-lg"></i>
+                <h4 class="font-bold text-slate-800 text-lg">
+                  Informasi Siklus
+                </h4>
+              </div>
+              <div class="space-y-4 text-sm">
+                <div
+                  class="flex flex-col sm:flex-row sm:items-start justify-between gap-1 sm:gap-4"
+                >
+                  <div class="flex items-center gap-3 text-slate-600 shrink-0">
+                    <i class="far fa-calendar-alt w-4 text-center"></i>
+                    Pertemuan
+                  </div>
+                  <span class="font-bold text-slate-800 sm:text-right"
+                    >1 Kali Pertemuan</span
+                  >
                 </div>
-                
-                <!-- Kotak iFrame Google Drive (Penampil PDF Menyeluruh) -->
-                <div class="w-full h-[600px] md:h-[800px] rounded-2xl overflow-hidden border-2 border-slate-200 bg-slate-50 relative shadow-inner">
-                    <!-- Loading Text -->
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-400">
-                        <i class="fas fa-circle-notch fa-spin text-4xl mb-4 text-red-800"></i>
-                        <p class="text-sm font-medium">Memuat Dokumen PDF...</p>
-                    </div>
-                    
-                    <!-- iFrame Embed: URL sudah diganti dengan file PDF Anda (format /preview) -->
-                    <iframe class="relative z-10 w-full h-full bg-white" src="https://drive.google.com/file/d/14QnkTcwolKcaG5yiOSLZK2Wnc5hM81CL/preview" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <div
+                  class="flex flex-col sm:flex-row sm:items-start justify-between gap-1 sm:gap-4"
+                >
+                  <div class="flex items-center gap-3 text-slate-600 shrink-0">
+                    <i class="fas fa-layer-group w-4 text-center"></i>
+                    Pendekatan
+                  </div>
+                  <span class="font-bold text-slate-800 sm:text-right"
+                    >Deep Learning</span
+                  >
                 </div>
+                <div
+                  class="flex flex-col sm:flex-row sm:items-start justify-between gap-1 sm:gap-4"
+                >
+                  <div class="flex items-center gap-3 text-slate-600 shrink-0">
+                    <i class="fas fa-sitemap w-4 text-center"></i> Model
+                  </div>
+                  <span class="font-bold text-slate-800 sm:text-right"
+                    >Problem-Based Learning (PBL)</span
+                  >
+                </div>
+                <div
+                  class="flex flex-col sm:flex-row sm:items-start justify-between gap-1 sm:gap-4"
+                >
+                  <div class="flex items-center gap-3 text-slate-600 shrink-0">
+                    <i class="fas fa-comments w-4 text-center"></i> Metode
+                  </div>
+                  <span class="font-bold text-slate-800 sm:text-right"
+                    >Diskusi, studi kasus, tanya jawab, presentasi
+                    interaktif</span
+                  >
+                </div>
+                <div
+                  class="flex flex-col sm:flex-row sm:items-start justify-between gap-1 sm:gap-4"
+                >
+                  <div class="flex items-center gap-3 text-slate-600 shrink-0">
+                    <i class="fas fa-laptop-code w-4 text-center"></i> Media
+                  </div>
+                  <span class="font-bold text-slate-800 sm:text-right"
+                    >LCD, Proyektor, Laptop, SmartPhone, Pena, LKM</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ANALISIS ARTEFAK WORDWALL -->
+        <div
+          class="bg-white p-8 rounded-[2rem] border border-slate-200 shadow-sm mb-10"
+        >
+          <div class="flex items-center gap-3 mb-8">
+            <div
+              class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center"
+            >
+              <i class="fas fa-microscope text-lg"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-800 font-heading">
+              Analisis Artefak: Asesmen Formatif Wordwall
+            </h3>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div
+              class="bg-emerald-50/50 p-6 rounded-2xl border border-emerald-100"
+            >
+              <h4
+                class="font-bold text-emerald-900 mb-4 flex items-center gap-2 text-lg"
+              >
+                <i class="fas fa-check-circle text-emerald-600"></i> Keunggulan
+              </h4>
+              <ul class="text-sm text-slate-700 space-y-3">
+                <li class="flex items-start gap-2">
+                  <i class="fas fa-check text-emerald-500 mt-1"></i>
+                  <span
+                    >Sangat efisien untuk asesmen formatif dalam 1 pertemuan
+                    singkat.</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fas fa-check text-emerald-500 mt-1"></i>
+                  <span
+                    >Menghilangkan ketegangan kuis tulis; murid dievaluasi tanpa
+                    merasa "sedang ujian".</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fas fa-check text-emerald-500 mt-1"></i>
+                  <span
+                    >Umpan balik seketika (<em>instant feedback</em>) membantu
+                    guru mengevaluasi ketuntasan materi hari itu juga.</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="bg-red-50/50 p-6 rounded-2xl border border-red-100">
+              <h4
+                class="font-bold text-red-900 mb-4 flex items-center gap-2 text-lg"
+              >
+                <i class="fas fa-exclamation-triangle text-red-600"></i>
+                Tantangan/Kelemahan
+              </h4>
+              <ul class="text-sm text-slate-700 space-y-3">
+                <li class="flex items-start gap-2">
+                  <i class="fas fa-times text-red-500 mt-1"></i>
+                  <span
+                    >Bergantung penuh pada stabilitas koneksi internet dan gawai
+                    murid di jam akhir pelajaran.</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fas fa-times text-red-500 mt-1"></i>
+                  <span
+                    >Terkadang fokus murid bergeser dari menjawab benar menjadi
+                    sekadar "menjawab cepat" demi poin
+                    (<em>leaderboard</em>).</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- NEW: Dokumentasi Artefak Link -->
+          <div
+            class="mt-8 bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6"
+          >
+            <div class="flex items-center gap-4 w-full md:w-auto">
+              <div
+                class="w-16 h-16 rounded-xl bg-white shadow-sm border border-slate-200 overflow-hidden shrink-0"
+              >
+                <!-- Placeholder gambar Wordwall -->
+                <img
+                  src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop"
+                  class="w-full h-full object-cover"
+                  alt="Wordwall Preview"
+                />
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-800 text-lg">
+                  Dokumentasi & Bukti Produk
+                </h4>
+                <p class="text-xs text-slate-500">
+                  Tangkapan layar instrumen & hasil Wordwall
+                </p>
+              </div>
+            </div>
+            <!-- Tombol mengarah ke tab Artefak -->
+            <button
+              onclick="showTab('artefak')"
+              class="w-full md:w-auto px-6 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-xl text-sm font-bold transition flex items-center justify-center gap-2 shrink-0 shadow-md"
+            >
+              <i class="fas fa-images"></i> Lihat Bukti di Galeri Artefak
+            </button>
+          </div>
+        </div>
+
+        <!-- NILAI DAN KARAKTER YANG DIKEMBANGKAN -->
+        <div
+          class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden mb-8"
+        >
+          <!-- Header Dark Red -->
+          <div class="bg-red-900 px-6 py-4 flex items-center gap-3">
+            <div
+              class="bg-white/20 w-8 h-8 rounded-full flex items-center justify-center text-white"
+            >
+              <i class="fas fa-star"></i>
+            </div>
+            <h3 class="text-white font-bold text-lg">
+              Nilai dan Karakter yang Dikembangkan
+            </h3>
+          </div>
+          <!-- Isi 5 Kolom -->
+          <div class="p-6 md:p-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
+              <!-- Item 1 -->
+              <div class="flex flex-col gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-red-50 text-red-700 flex items-center justify-center border border-red-100 shrink-0"
+                >
+                  <i class="fas fa-heart"></i>
+                </div>
+                <div>
+                  <h4
+                    class="text-sm font-bold text-slate-800 mb-1 leading-tight"
+                  >
+                    Cinta tanah air dan tanggung jawab sosial
+                  </h4>
+                </div>
+              </div>
+              <!-- Item 2 -->
+              <div class="flex flex-col gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-amber-50 text-amber-700 flex items-center justify-center border border-amber-100 shrink-0"
+                >
+                  <i class="fas fa-balance-scale"></i>
+                </div>
+                <div>
+                  <h4
+                    class="text-sm font-bold text-slate-800 mb-1 leading-tight"
+                  >
+                    Kepatuhan hukum
+                  </h4>
+                  <p class="text-xs text-slate-500">
+                    Mentaati aturan dan perundang-undangan.
+                  </p>
+                </div>
+              </div>
+              <!-- Item 3 -->
+              <div class="flex flex-col gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center border border-emerald-100 shrink-0"
+                >
+                  <i class="fas fa-lightbulb"></i>
+                </div>
+                <div>
+                  <h4
+                    class="text-sm font-bold text-slate-800 mb-1 leading-tight"
+                  >
+                    Pemecahan masalah
+                  </h4>
+                  <p class="text-xs text-slate-500">
+                    Mampu merumuskan solusi sesuai.
+                  </p>
+                </div>
+              </div>
+              <!-- Item 4 -->
+              <div class="flex flex-col gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-blue-50 text-blue-700 flex items-center justify-center border border-blue-100 shrink-0"
+                >
+                  <i class="fas fa-comments"></i>
+                </div>
+                <div>
+                  <h4
+                    class="text-sm font-bold text-slate-800 mb-1 leading-tight"
+                  >
+                    Komunikasi
+                  </h4>
+                  <p class="text-xs text-slate-500">
+                    Menyampaikan ide dan pendapat secara jelas dan santun.
+                  </p>
+                </div>
+              </div>
+              <!-- Item 5 -->
+              <div class="flex flex-col gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-purple-50 text-purple-700 flex items-center justify-center border border-purple-100 shrink-0"
+                >
+                  <i class="fas fa-brain"></i>
+                </div>
+                <div>
+                  <h4
+                    class="text-sm font-bold text-slate-800 mb-1 leading-tight"
+                  >
+                    Bernalar Kritis
+                  </h4>
+                  <p class="text-xs text-slate-500">
+                    Menganalisis masalah dari berbagai sudut pandang.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- QUOTE BOX -->
+        <div
+          class="bg-amber-50/60 border border-amber-200/60 rounded-2xl p-6 text-center mb-12 flex flex-col md:flex-row items-center justify-center gap-4 mx-auto max-w-4xl shadow-sm"
+        >
+          <i
+            class="fas fa-quote-left text-amber-400 text-2xl hidden md:block"
+          ></i>
+          <p class="text-slate-700 font-medium italic md:text-lg">
+            "Belajar bermakna, kritis, kolaboratif, dan menyenangkan untuk
+            membentuk warga negara yang bertanggung jawab."
+          </p>
+          <i
+            class="fas fa-quote-right text-amber-400 text-2xl hidden md:block"
+          ></i>
+        </div>
+
+        <!-- MEDIA PRESENTASI CANVA TAMPIL LANGSUNG -->
+        <div
+          class="mt-10 bg-gradient-to-r from-blue-50 to-white p-6 md:p-10 rounded-[2.5rem] border border-blue-100 shadow-sm"
+        >
+          <div
+            class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6"
+          >
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center shrink-0 shadow-md border border-blue-200"
+              >
+                <i class="fas fa-desktop text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-800 text-lg md:text-xl">
+                  Media Presentasi (Canva)
+                </h3>
+                <p class="text-xs text-slate-500">
+                  PPT Posisi, Tugas & Tanggung Jawab Warga Negara
+                </p>
+              </div>
+            </div>
+            <a
+              href="https://www.canva.com/design/DAHIBLoiklY/1xbM_nxhMIFhntdubzfpYw/view"
+              target="_blank"
+              class="w-full sm:w-auto px-5 py-2.5 bg-blue-600 text-white hover:bg-blue-700 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 shrink-0 shadow-md"
+            >
+              <i class="fas fa-external-link-alt text-sm"></i> Buka Layar Penuh
+            </a>
+          </div>
+
+          <!-- Kotak iFrame Canva -->
+          <div
+            class="w-full aspect-video md:aspect-[16/9] rounded-2xl overflow-hidden border-2 border-slate-200 bg-slate-50 relative shadow-inner"
+          >
+            <!-- Loading Text -->
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center text-slate-400"
+            >
+              <i
+                class="fas fa-circle-notch fa-spin text-4xl mb-4 text-blue-300"
+              ></i>
+              <p class="text-sm font-medium">Memuat Presentasi Canva...</p>
             </div>
 
-            <!-- REFLEKSI DIRI (Sesuai Rubrik: Perasaan, Pembelajaran, Tindak Lanjut) -->
-            <div class="mt-10 bg-white p-8 md:p-12 rounded-[2.5rem] border border-slate-100 shadow-sm">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="h-1 w-12 bg-red-800 rounded-full"></div>
-                    <h3 class="text-3xl font-bold text-gray-900">Refleksi Pengalaman Mengajar</h3>
-                </div>
+            <!-- iFrame Embed Canva -->
+            <iframe
+              class="relative z-10 w-full h-full bg-white"
+              src="https://www.canva.com/design/DAHIBLoiklY/1xbM_nxhMIFhntdubzfpYw/view?embed"
+              frameborder="0"
+              allow="autoplay; fullscreen"
+              allowfullscreen
+            ></iframe>
+          </div>
 
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Perasaan -->
-                    <div class="bg-amber-50/50 p-6 rounded-3xl border border-amber-100/50 hover:-translate-y-2 transition duration-300">
-                        <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mb-4 shadow-inner text-xl"><i class="fas fa-smile-beam"></i></div>
-                        <h4 class="font-bold text-slate-800 mb-3 text-lg">Perasaan (Feelings)</h4>
-                        <p class="text-slate-600 text-sm leading-relaxed text-justify">
-                            Pada awalnya, saya merasa <strong>terbebani dan cemas</strong> ketika harus menyampaikan materi ini dalam alokasi waktu yang hanya 1 pertemuan. Namun, kecemasan tersebut berubah menjadi <strong>lega</strong> ketika saya memutuskan untuk mengesampingkan LKM dan Proyek, beralih pada penyampaian materi visual yang efisien, dan melihat murid antusias mengerjakan formatif lewat Wordwall di akhir sesi.
-                        </p>
-                    </div>
+          <p
+            class="text-[10px] md:text-xs text-slate-500 mt-4 flex items-center justify-center gap-2"
+          >
+            <i class="fas fa-info-circle text-blue-600"></i>
+            Presentasi ditampilkan menggunakan format Tautan Sematan Canva.
+          </p>
+        </div>
 
-                    <!-- Pembelajaran -->
-                    <div class="bg-emerald-50/50 p-6 rounded-3xl border border-emerald-100/50 hover:-translate-y-2 transition duration-300">
-                        <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-4 shadow-inner text-xl"><i class="fas fa-lightbulb"></i></div>
-                        <h4 class="font-bold text-slate-800 mb-3 text-lg">Pembelajaran (Findings)</h4>
-                        <p class="text-slate-600 text-sm leading-relaxed text-justify">
-                            Saya menyadari bahwa tidak semua materi harus diselesaikan dengan pendekatan proyek yang kompleks, terutama jika durasinya sangat terbatas. <strong>Kesesuaian metode dengan waktu</strong> adalah kunci. Asesmen formatif gamifikasi terbukti sangat efektif untuk mengukur persentase ketuntasan tujuan pembelajaran dalam tempo kurang dari 15 menit tanpa memicu stres pada murid.
-                        </p>
-                    </div>
+        <!-- EMBED DOKUMEN RPM TAMPIL LANGSUNG DI SINI -->
+        <div
+          class="mt-10 bg-white p-6 md:p-10 rounded-[2.5rem] border border-slate-100 shadow-sm"
+        >
+          <div
+            class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6"
+          >
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-red-50 text-red-800 rounded-xl flex items-center justify-center shrink-0 border border-red-100"
+              >
+                <i class="fas fa-file-pdf text-2xl"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-800 text-lg md:text-xl">
+                  Dokumen RPM - Siklus 1
+                </h3>
+                <p class="text-xs text-slate-500">
+                  Rancangan Pembelajaran Mendalam / Modul Ajar
+                </p>
+              </div>
+            </div>
+            <!-- Tautan ini diupdate ke file PDF Anda -->
+            <a
+              href="https://drive.google.com/file/d/14QnkTcwolKcaG5yiOSLZK2Wnc5hM81CL/view?usp=sharing"
+              target="_blank"
+              class="w-full sm:w-auto px-5 py-2.5 bg-red-800 text-white hover:bg-red-900 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 shrink-0 shadow-md"
+            >
+              <i class="fas fa-download text-sm"></i> Unduh Dokumen
+            </a>
+          </div>
 
-                    <!-- Rencana Tindak Lanjut -->
-                    <div class="bg-blue-50/50 p-6 rounded-3xl border border-blue-100/50 hover:-translate-y-2 transition duration-300">
-                        <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4 shadow-inner text-xl"><i class="fas fa-rocket"></i></div>
-                        <h4 class="font-bold text-slate-800 mb-3 text-lg">Tindak Lanjut (Future)</h4>
-                        <p class="text-slate-600 text-sm leading-relaxed text-justify">
-                            Untuk materi-materi dengan jatah 1 pertemuan ke depannya, saya akan terus memprioritaskan pemaparan visual menggunakan media desain seperti Canva untuk menarik fokus murid, dipadukan dengan tes formatif digital cepat. Metode proyek dan LKM hanya akan saya gunakan pada siklus dengan alokasi minimal 2 kali pertemuan.
-                        </p>
-                    </div>
-                </div>
+          <!-- Kotak iFrame Google Drive (Penampil PDF Menyeluruh) -->
+          <div
+            class="w-full h-[600px] md:h-[800px] rounded-2xl overflow-hidden border-2 border-slate-200 bg-slate-50 relative shadow-inner"
+          >
+            <!-- Loading Text -->
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center text-slate-400"
+            >
+              <i
+                class="fas fa-circle-notch fa-spin text-4xl mb-4 text-red-800"
+              ></i>
+              <p class="text-sm font-medium">Memuat Dokumen PDF...</p>
             </div>
 
-        </section>
+            <!-- iFrame Embed -->
+            <iframe
+              class="relative z-10 w-full h-full bg-white"
+              src="https://drive.google.com/file/d/14QnkTcwolKcaG5yiOSLZK2Wnc5hM81CL/preview"
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- REFLEKSI DIRI (Sesuai Rubrik: Perasaan, Pembelajaran, Tindak Lanjut) -->
+        <div
+          class="mt-10 bg-white p-8 md:p-12 rounded-[2.5rem] border border-slate-100 shadow-sm"
+        >
+          <div class="flex items-center gap-4 mb-8">
+            <div class="h-1 w-12 bg-red-800 rounded-full"></div>
+            <h3 class="text-3xl font-bold text-gray-900">
+              Refleksi Pengalaman Mengajar
+            </h3>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Perasaan -->
+            <div
+              class="bg-amber-50/50 p-6 rounded-3xl border border-amber-100/50 hover:-translate-y-2 transition duration-300"
+            >
+              <div
+                class="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mb-4 shadow-inner text-xl"
+              >
+                <i class="fas fa-smile-beam"></i>
+              </div>
+              <h4 class="font-bold text-slate-800 mb-3 text-lg">
+                Perasaan (Feelings)
+              </h4>
+              <p class="text-slate-600 text-sm leading-relaxed text-justify">
+                Pada awalnya, saya merasa
+                <strong>terbebani dan cemas</strong> ketika harus menyampaikan
+                materi ini dalam alokasi waktu yang hanya 1 pertemuan. Namun,
+                kecemasan tersebut berubah menjadi <strong>lega</strong> ketika
+                saya memutuskan untuk mengesampingkan LKM dan Proyek, beralih
+                pada penyampaian materi visual yang efisien, dan melihat murid
+                antusias mengerjakan formatif lewat Wordwall di akhir sesi.
+              </p>
+            </div>
+
+            <!-- Pembelajaran -->
+            <div
+              class="bg-emerald-50/50 p-6 rounded-3xl border border-emerald-100/50 hover:-translate-y-2 transition duration-300"
+            >
+              <div
+                class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-4 shadow-inner text-xl"
+              >
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <h4 class="font-bold text-slate-800 mb-3 text-lg">
+                Pembelajaran (Findings)
+              </h4>
+              <p class="text-slate-600 text-sm leading-relaxed text-justify">
+                Saya menyadari bahwa tidak semua materi harus diselesaikan
+                dengan pendekatan proyek yang kompleks, terutama jika durasinya
+                sangat terbatas.
+                <strong>Kesesuaian metode dengan waktu</strong> adalah kunci.
+                Asesmen formatif gamifikasi terbukti sangat efektif untuk
+                mengukur persentase ketuntasan tujuan pembelajaran dalam tempo
+                kurang dari 15 menit tanpa memicu stres pada murid.
+              </p>
+            </div>
+
+            <!-- Rencana Tindak Lanjut -->
+            <div
+              class="bg-blue-50/50 p-6 rounded-3xl border border-blue-100/50 hover:-translate-y-2 transition duration-300"
+            >
+              <div
+                class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4 shadow-inner text-xl"
+              >
+                <i class="fas fa-rocket"></i>
+              </div>
+              <h4 class="font-bold text-slate-800 mb-3 text-lg">
+                Tindak Lanjut (Future)
+              </h4>
+              <p class="text-slate-600 text-sm leading-relaxed text-justify">
+                Untuk materi-materi dengan jatah 1 pertemuan ke depannya, saya
+                akan terus memprioritaskan pemaparan visual menggunakan media
+                desain seperti Canva untuk menarik fokus murid, dipadukan dengan
+                tes formatif digital cepat. Metode proyek dan LKM hanya akan
+                saya gunakan pada siklus dengan alokasi minimal 2 kali
+                pertemuan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- KONTEN: SIKLUS 2 -->
     <main id="siklus2" class="tab-content">
-        <section class="py-16 px-6 max-w-7xl mx-auto">
-            <div class="bg-white rounded-[3rem] shadow-xl overflow-hidden border border-slate-100">
-                <div class="grid lg:grid-cols-3">
-                    <div class="bg-slate-900 p-12 text-white lg:col-span-1">
-                        <h2 class="text-4xl font-extrabold mb-6">Siklus 2</h2>
-                        <p class="mb-8 opacity-80 text-sm leading-relaxed italic">"Implementasi Sishankamrata"</p>
-                        <div class="flex items-center gap-4 bg-white/10 p-4 rounded-2xl">
-                            <i class="fas fa-walking text-xl"></i>
-                            <div><p class="text-[10px] uppercase font-bold opacity-60">Metode</p><p class="text-sm font-bold">Gallery Walk</p></div>
-                        </div>
-                    </div>
-                    <div class="p-12 lg:col-span-2">
-                        <h3 class="text-2xl font-bold mb-6 text-slate-800">Inovasi Gallery Walk</h3>
-                        <p class="text-slate-600 mb-8 leading-relaxed">Menyiasati kelas besar (34 murid) dengan memberikan ruang bagi murid untuk bergerak dan mengapresiasi poster hasil karya teman sejawat secara terstruktur.</p>
-                        <div class="bg-red-50 p-6 rounded-2xl border border-red-100">
-                            <h4 class="font-bold text-sm text-red-800 mb-2">Pencapaian:</h4>
-                            <p class="text-xs text-red-600 italic">Murid mampu mengidentifikasi peran rakyat sebagai kekuatan pendukung secara kritis.</p>
-                        </div>
-                    </div>
+      <section class="py-16 px-6 max-w-7xl mx-auto">
+        <div
+          class="bg-white rounded-[3rem] shadow-xl overflow-hidden border border-slate-100"
+        >
+          <div class="grid lg:grid-cols-3">
+            <div class="bg-slate-900 p-12 text-white lg:col-span-1">
+              <h2 class="text-4xl font-extrabold mb-6">Siklus 2</h2>
+              <p class="mb-8 opacity-80 text-sm leading-relaxed italic">
+                "Implementasi Sishankamrata"
+              </p>
+              <div class="flex items-center gap-4 bg-white/10 p-4 rounded-2xl">
+                <i class="fas fa-walking text-xl"></i>
+                <div>
+                  <p class="text-[10px] uppercase font-bold opacity-60">
+                    Metode
+                  </p>
+                  <p class="text-sm font-bold">Gallery Walk</p>
                 </div>
+              </div>
             </div>
-        </section>
+            <div class="p-12 lg:col-span-2">
+              <h3 class="text-2xl font-bold mb-6 text-slate-800">
+                Inovasi Gallery Walk
+              </h3>
+              <p class="text-slate-600 mb-8 leading-relaxed">
+                Menyiasati kelas besar (34 murid) dengan memberikan ruang bagi
+                murid untuk bergerak dan mengapresiasi poster hasil karya teman
+                sejawat secara terstruktur.
+              </p>
+              <div class="bg-red-50 p-6 rounded-2xl border border-red-100">
+                <h4 class="font-bold text-sm text-red-800 mb-2">Pencapaian:</h4>
+                <p class="text-xs text-red-600 italic">
+                  Murid mampu mengidentifikasi peran rakyat sebagai kekuatan
+                  pendukung secara kritis.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- KONTEN: SIKLUS 3 -->
     <main id="siklus3" class="tab-content">
-        <section class="py-16 px-6 max-w-7xl mx-auto">
-            <div class="bg-white rounded-[3rem] shadow-xl overflow-hidden border border-slate-100">
-                <div class="grid lg:grid-cols-3">
-                    <div class="bg-amber-600 p-12 text-white lg:col-span-1">
-                        <h2 class="text-4xl font-extrabold mb-6">Siklus 3</h2>
-                        <p class="mb-8 opacity-80 text-sm leading-relaxed italic">"Diseminasi & Keberlanjutan"</p>
-                    </div>
-                    <div class="p-12 lg:col-span-2">
-                        <h3 class="text-2xl font-bold mb-6 text-slate-800">Evaluasi Akhir</h3>
-                        <p class="text-slate-600 leading-relaxed mb-6">Penyusunan laporan praktik baik dan berbagi pengalaman dengan rekan sejawat mengenai hasil refleksi dari Siklus 1 dan 2.</p>
-                    </div>
-                </div>
+      <section class="py-16 px-6 max-w-7xl mx-auto">
+        <div
+          class="bg-white rounded-[3rem] shadow-xl overflow-hidden border border-slate-100"
+        >
+          <div class="grid lg:grid-cols-3">
+            <div class="bg-amber-600 p-12 text-white lg:col-span-1">
+              <h2 class="text-4xl font-extrabold mb-6">Siklus 3</h2>
+              <p class="mb-8 opacity-80 text-sm leading-relaxed italic">
+                "Diseminasi & Keberlanjutan"
+              </p>
             </div>
-        </section>
+            <div class="p-12 lg:col-span-2">
+              <h3 class="text-2xl font-bold mb-6 text-slate-800">
+                Evaluasi Akhir
+              </h3>
+              <p class="text-slate-600 leading-relaxed mb-6">
+                Penyusunan laporan praktik baik dan berbagi pengalaman dengan
+                rekan sejawat mengenai hasil refleksi dari Siklus 1 dan 2.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- KONTEN: ARTEFAK -->
     <main id="artefak" class="tab-content">
-        <section class="py-16 px-6 max-w-7xl mx-auto text-center">
-            <h2 class="text-4xl font-extrabold text-slate-900 mb-4">Galeri Artefak</h2>
-            <p class="text-slate-500 italic mb-12">Dokumentasi fisik praktik mengajar.</p>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group">
-                    <div class="aspect-square bg-slate-100 flex items-center justify-center relative">
-                        <img src="image_f09c78.png" class="w-full h-full object-cover">
-                        <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-lg text-[10px] font-bold text-red-800 uppercase">Aktivitas</div>
-                    </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-slate-800 text-left">Diskusi Kelompok</h4>
-                        <p class="text-xs text-slate-500 mt-1 text-left">Implementasi kolaborasi aktif di SMAN 1 Badegan.</p>
-                    </div>
-                </div>
+      <section class="py-16 px-6 max-w-7xl mx-auto text-center">
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-4">
+          Galeri Artefak
+        </h2>
+        <p class="text-slate-500 italic mb-12">
+          Dokumentasi fisik praktik mengajar.
+        </p>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 group"
+          >
+            <div
+              class="aspect-square bg-slate-100 flex items-center justify-center relative"
+            >
+              <img src="image_f09c78.png" class="w-full h-full object-cover" />
+              <div
+                class="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-lg text-[10px] font-bold text-red-800 uppercase"
+              >
+                Aktivitas
+              </div>
             </div>
-        </section>
+            <div class="p-6">
+              <h4 class="font-bold text-slate-800 text-left">
+                Diskusi Kelompok
+              </h4>
+              <p class="text-xs text-slate-500 mt-1 text-left">
+                Implementasi kolaborasi aktif di SMAN 1 Badegan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer class="bg-white py-12 px-6 border-t border-slate-100 text-center">
-        <div class="max-w-7xl mx-auto">
-            <p class="font-bold text-slate-800 mb-2">EduPortfolio <span class="text-red-800">2026</span></p>
-            <p class="text-slate-400 text-[10px] uppercase tracking-widest">Ummul Karima - SMAN 1 Badegan - UNIPMA Madiun</p>
-        </div>
+      <div class="max-w-7xl mx-auto">
+        <p class="font-bold text-slate-800 mb-2">
+          EduPortfolio <span class="text-red-800">2026</span>
+        </p>
+        <p class="text-slate-400 text-[10px] uppercase tracking-widest">
+          Ummul Karima - SMAN 1 Badegan - UMPO (Universitas Muhammadiyah
+          Ponorogo)
+        </p>
+      </div>
     </footer>
 
     <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenuClose = document.getElementById('mobile-menu-close');
-        const mobileSidebar = document.getElementById('mobile-sidebar');
-        const mobileBackdrop = document.getElementById('mobile-menu-backdrop');
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenuClose = document.getElementById("mobile-menu-close");
+      const mobileSidebar = document.getElementById("mobile-sidebar");
+      const mobileBackdrop = document.getElementById("mobile-menu-backdrop");
 
-        function openMobileMenu() {
-            mobileSidebar.classList.add('active');
-            mobileBackdrop.classList.add('active');
-            document.body.classList.add('menu-lock');
-        }
+      function openMobileMenu() {
+        mobileSidebar.classList.add("active");
+        mobileBackdrop.classList.add("active");
+        document.body.classList.add("menu-lock");
+      }
 
-        function closeMobileMenu() {
-            mobileSidebar.classList.remove('active');
-            mobileBackdrop.classList.remove('active');
-            document.body.classList.remove('menu-lock');
-        }
+      function closeMobileMenu() {
+        mobileSidebar.classList.remove("active");
+        mobileBackdrop.classList.remove("active");
+        document.body.classList.remove("menu-lock");
+      }
 
-        mobileMenuButton?.addEventListener('click', openMobileMenu);
-        mobileMenuClose?.addEventListener('click', closeMobileMenu);
-        mobileBackdrop?.addEventListener('click', closeMobileMenu);
+      mobileMenuButton?.addEventListener("click", openMobileMenu);
+      mobileMenuClose?.addEventListener("click", closeMobileMenu);
+      mobileBackdrop?.addEventListener("click", closeMobileMenu);
 
-        function showTab(tabId) {
-            const tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => tab.classList.remove('active'));
-            const activeTab = document.getElementById(tabId);
-            if (activeTab) activeTab.classList.add('active');
-            
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => link.classList.remove('active-nav'));
-            const currentNav = document.getElementById('nav-' + tabId);
-            if (currentNav) currentNav.classList.add('active-nav');
-            
-            closeMobileMenu();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+      function showTab(tabId) {
+        const tabs = document.querySelectorAll(".tab-content");
+        tabs.forEach((tab) => tab.classList.remove("active"));
+        const activeTab = document.getElementById(tabId);
+        if (activeTab) activeTab.classList.add("active");
+
+        const navLinks = document.querySelectorAll(".nav-link");
+        navLinks.forEach((link) => link.classList.remove("active-nav"));
+        const currentNav = document.getElementById("nav-" + tabId);
+        if (currentNav) currentNav.classList.add("active-nav");
+
+        closeMobileMenu();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     </script>
-</body>
+  </body>
 </html>
